@@ -4,9 +4,19 @@
 .blue{
     color: blue;
 }
+.up{
+    color: #2795e9;
+}
+
 .header_padded{
     font-size: 36px;
     font-weight: bold;
+    text-align: left;
+    font-family: "Calibri Light";
+}
+
+.footer_padded{
+    font-size: 24px;
     text-align: left;
     font-family: "Calibri Light";
 }
