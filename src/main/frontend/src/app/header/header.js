@@ -6,7 +6,7 @@ export default class Header extends Component {
         return (
             <header className= "ui container header_padded ">
                 <img className = "ui middle aligned mini image" src ={mainIcon}/>
-                <span className =" blue_cat">Кото</span><span className = "red_cat">услуги</span>
+                <span className =" blue">Кото</span><span className = "red">услуги</span>
             </header>
         )
     }
