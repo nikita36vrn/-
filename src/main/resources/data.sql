@@ -48,3 +48,5 @@ INSERT INTO service_category
 values (4, 2);
 INSERT INTO service_category
 values (5, 3);
+INSERT INTO service_category
+values (5, 2);
