@@ -29,6 +29,7 @@ export default class Main extends Component {
                         <img
                             src={icons[item.id]}
                             className="ui mini right floated image"
+                            alt={"Pic"}
                         />
                         <div className="header">{item.name}</div>
                         <div className="meta">{item.categories.map((item)=>{return item.name}).join(',') }</div>
