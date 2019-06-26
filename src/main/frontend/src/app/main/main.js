@@ -28,7 +28,7 @@ export default class Main extends Component {
                     <div className="content">
                         <img
                             src={icons[item.id]}
-                            className="ui mini right floated image"
+                            className="ui tiny right floated image"
                             alt={"Pic"}
                         />
                         <div className="header">{item.name}</div>
