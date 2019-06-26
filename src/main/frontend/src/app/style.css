@@ -1,0 +1,12 @@
+.blue_cat {
+    color:blue;
+}
+.red_cat {
+    color:red;
+}
+
+.header_padded {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 15px 0px;
+}
