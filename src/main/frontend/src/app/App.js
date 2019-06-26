@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
-import {hot} from 'react-hot-loader/root'
-import "./style.css"
+import Header from "./header/header";
+import Main from "./header/main";
+import Footer from "./header/footer";
+import "semantic-ui-css/semantic.min.css"
 
-class App extends Component {
+export default class App extends Component {
 
     render() {
-        return <div>Тест</div>
+        return(<div>
+            <Header/>
+            <Main/>
+            <Footer/>
+
+        </div>
+        )
     }
 }
-
-export default process.env.NODE_ENV === 'production' ? App : hot(App)
