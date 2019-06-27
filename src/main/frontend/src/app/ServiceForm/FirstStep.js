@@ -7,17 +7,17 @@ export default class FirstStepForm extends Component {
             <div>
                 <div className="ui form">
                     <div className="field">
-                        <label>First Name</label>
-                        <input placeholder="First Name"/>
+                        <label>Имя</label>
+                        <input placeholder="Имя"/>
                     </div>
                     <div className="field">
-                        <label>Last Name</label>
-                        <input placeholder="Last Name"/>
+                        <label>Фамилия</label>
+                        <input placeholder="Фамилия"/>
                     </div>
                     <div className="field">
                         <div className="ui checkbox">
                             <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
-                            <label>I agree to the Terms and Conditions</label>
+                            <label>Не читать, но согласиться с политикой партии и тд и тп</label>
                         </div>
                     </div>
                     <button onClick={this.props.nextStep}  className="ui icon right labeled button primary right floated">Далее

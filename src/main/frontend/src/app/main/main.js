@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import axios from "axios";
+import axios from "axios"
 import {icons} from "../constants";
 import Input from "semantic-ui-react/dist/commonjs/elements/Input";
 import Link from "react-router-dom/es/Link";
 
 export default class Main extends Component {
 
-    state={
-        serviceList:[],
-        listServiceFiltered:[]
+    state = {
+        listService: [],
+        listServiceFiltered: []
     };
-
     search = (val) => {
         const listService = this.state.listService;
         const value = val.value.toLowerCase();
@@ -20,15 +19,19 @@ export default class Main extends Component {
         this.setState({listServiceFiltered: filter})
     };
 
-    getServiceList = () =>{
-        axios.post('/api/listService')
-            .then((response)=>{this.setState({serviceList: response.data.content})})
-            .catch((e)=>{console.log(e);})
-    };
-
     componentDidMount() {
         this.getServiceList()
     }
+
+    getServiceList = () => {
+        axios.post('/api/listService')
+            .then((response) => {
+                this.setState({listService: response.data.content, listServiceFiltered: response.data.content})
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    };
 
     render() {
 
@@ -73,4 +76,4 @@ export default class Main extends Component {
 
 
     }
-};
+}
