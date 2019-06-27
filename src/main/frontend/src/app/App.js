@@ -4,7 +4,10 @@ import "./style.css"
 import Header from "./header/header";
 import Main from "./main/main";
 import Footer from "./footer/footer";
+import Form404 from "./Form404/Page404";
 import "semantic-ui-css/semantic.min.css"
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import ServiceForm from "./ServiceForm/ServiceForm";
 
 class App extends Component {
 
@@ -12,7 +15,13 @@ class App extends Component {
         return (
             <div className="ui container">
                 <Header/>
-                <Main/>
+                <Router>
+                    <Switch>
+                        <Route path="/" exact component={Main}/>
+                        <Route path="/1" exact component={ServiceForm}/>
+                        <Route component={Form404}/>
+                    </Switch>
+                </Router>
                 <Footer/>
             </div>
         )
