@@ -1,3 +1,5 @@
+import React, {Component} from 'react';
+import {hot} from 'react-hot-loader/root'
 import "./style.css"
 import Header from "./header/header";
 import Footer from "./footer/footer";
@@ -7,8 +9,8 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import ServiceForm from "./ServiceForm/ServiceForm";
 import Page404 from "./404/404";
 
-class App extends Component
-{
+class App extends Component {
+
     render() {
         return (
             <div className='ui container'>
