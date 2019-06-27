@@ -7,5 +7,19 @@
 .header_padded{
 font-size: 24px;
     font-weight: bold;
+    padding: 15px  0px;
 }
 
+.footer{
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: grey; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+    height: 85px;
+
+    text-align: center;
+    vertical-align: bottom;
+
+}
