@@ -4,9 +4,6 @@
 .blue{
     color: blue;
 }
-.up{
-    color: #2795e9;
-}
 
 .header_padded{
     font-size: 36px;
@@ -19,4 +16,14 @@
     font-size: 24px;
     text-align: left;
     font-family: "Calibri Light";
+    position: fixed;
+    left: 0; bottom: 0;
+    padding: 10px;
+    background: grey;
+    color: #fff;
+    width: 100%;
+    height: 85px;
+
+    text-align: center;
+    vertical-align: bottom;
 }
