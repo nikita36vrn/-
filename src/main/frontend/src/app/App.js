@@ -5,6 +5,9 @@ import Header from "./header/header";
 import Main from "./Main/Main";
 import Footer from "./footer/footer";
 import 'semantic-ui-css/semantic.min.css'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import ServiceForm from "./ServiceForm/ServiceForm";
+import Page404 from "./404/Page404";
 
 class App extends Component {
 
@@ -12,9 +15,18 @@ class App extends Component {
         return (
             <div className='ui container'>
                 <Header/>
-                <Main/>
+
+                <Router>
+                    <Switch>
+                        <Route path="/" exact component={Main}/>
+                        <Route path="/1" exact component={ServiceForm}/>
+                        <Route component={Page404}/>
+                    </Switch>
+                </Router>
+
                 <Footer/>
-            </div>)
+            </div>
+    )
     }
 }
 
