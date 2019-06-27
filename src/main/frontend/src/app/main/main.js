@@ -1,11 +1,23 @@
 import React, {Component} from 'react';
 import axios from "axios";
 import {icons} from "../constants";
+import Input from "semantic-ui-react/dist/commonjs/elements/Input";
+import Link from "react-router-dom/es/Link";
 
 export default class Main extends Component {
 
     state={
-        serviceList:[]
+        serviceList:[],
+        listServiceFiltered:[]
+    };
+
+    search = (val) => {
+        const listService = this.state.listService;
+        const value = val.value.toLowerCase();
+        const filter = listService.filter((item) => {
+            return item.name.toLowerCase().includes(value)
+        });
+        this.setState({listServiceFiltered: filter})
     };
 
     getServiceList = () =>{
@@ -52,7 +64,7 @@ export default class Main extends Component {
                             )
                         })
                     }</div>
-                    : <div>Ничего не найдено</div>}
+                    : <div>Нет совпадений</div>}
 
             </div>
         )
