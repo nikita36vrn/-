@@ -31,6 +31,7 @@ export default class Main extends Component {
     }
 
     render() {
+
         return (
             <div>
                 <div style={{paddingBottom: 15, paddingTop: 15}}>
@@ -64,9 +65,12 @@ export default class Main extends Component {
                             )
                         })
                     }</div>
-                    : <div>Нет совпадений</div>}
+                    : <div>Ничего не найдено</div>}
+
 
             </div>
         )
+
+
     }
 };
