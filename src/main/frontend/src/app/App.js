@@ -8,10 +8,9 @@ import {BrowserRouter as Router} from "react-router-dom";
 import Switch from "react-router-dom/es/Switch";
 import Route from "react-router-dom/es/Route";
 import ServiceForm from "./serviceForm/serviceForm";
-
-import "semantic-ui-css/semantic.min.css"
 import Page404 from "./404/404";
-import PageKar from "./Kar/Kar";
+import "semantic-ui-css/semantic.min.css"
+
 
 
 
@@ -28,7 +27,6 @@ class App extends Component {
                     <Switch>
                         <Route path="/" exact component={ServiceList} />
                         <Route path="/3" exact component={ServiceForm} />
-                        <Route path="/5" exact component={PageKar} />
                         <Route component={Page404}/>
                     </Switch>
                 </Router>
