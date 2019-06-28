@@ -20,7 +20,7 @@ export default class ThirdStepForm extends Component {
                             <label>I agree to the Terms and Conditions</label>
                         </div>
                     </div>
-                    <button onClick={this.props.nextStep}  className="ui icon right labeled button primary right floated">Отправить
+                    <button onClick={this.props.submitForm}  className="ui icon right labeled button primary right floated">Отправить
                         <i aria-hidden="true" className="right arrow icon"/>
                     </button>
                     <button onClick={this.props.prevStep}  className="ui icon left labeled button primary left floated">Назад
