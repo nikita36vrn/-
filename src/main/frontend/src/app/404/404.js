@@ -6,8 +6,8 @@ export default class Page404 extends Component {
 render() {
     return (
         <div>
-            <img className="ui left medium image" src={image404}/>
-            
+            <img className="ui centered medium image" src={image404}/>
+            <div className="ui centered icon" > Page not found</div>
         </div>
     )
 }

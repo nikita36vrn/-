@@ -18,12 +18,7 @@ export default class SecondStep extends Component {
                     <label>Last Name</label>
                     <input placeholder="Last Name"/>
                 </div>
-                <div className="field">
-                    <div className="ui checkbox">
-                        <input type="checkbox" className="hidden" readOnly="" tabIndex="0"/>
-                        <label>I agree to the Terms and Conditions</label>
-                    </div>
-                </div>
+
                 <button onClick={this.props.nextStep} className="ui icon  right labeled button primary right floated">Далее
                     <i aria-hidden ="true" className="right arrow icon"/>
                 </button>
