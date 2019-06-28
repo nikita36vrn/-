@@ -8,7 +8,6 @@ export default class Page404 extends Component {
         return (
             <div>
                 <img className="ui centered medium image" src={image404}/>
-
             </div>
 
         )
