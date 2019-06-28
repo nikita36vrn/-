@@ -25,29 +25,34 @@ public class RequisitionService {
         return result;
     }
 
-    public int createRequisition(Map<String, Object> request) {
+    /**
+     * Список правильных ветеринаров
+     */
+    private LinkedList doctorNames = new LinkedList() {{
+        add("Иванов");
+        add("Петров");
+        add("Сидоров");
+    }};
 
+    public int createRequisition(Map<String, Object> request) throws ServiceException {
         Requisition requisition = new Requisition("Заявление", RequisitionStatus.DRAFT, 1);
-        request.forEach((s, o) -> {
-            switch (s) {
+        for (Map.Entry<String, Object> e : request.entrySet()) {
+            switch (e.getKey()) {
                 case "name":
-                    requisition.setName(o.toString());
+                    requisition.setName(e.getValue().toString());
                     break;
                 case "status":
-                    RequisitionStatus status = RequisitionStatus.valueOf(o.toString().toUpperCase());
+                    RequisitionStatus status = RequisitionStatus.valueOf(e.getValue().toString().toUpperCase());
                     requisition.setStatus(status);
                     break;
                 case "fields":
-                    ((Map<String, Object>) o).forEach((s1, o1) -> {
-                        Field field = new Field(s1, o1.toString());
-                        requisition.getFields().add(field);
-                    });
+                    populateFields(requisition, e.getValue());
                     break;
                 case "serviceId":
-                    requisition.setServiceId((Integer) o);
+                    requisition.setServiceId((Integer) e.getValue());
                     break;
             }
-        });
+        }
 
         Requisition save = requisitionRepository.save(requisition);
         return save.getId();
@@ -62,25 +67,49 @@ public class RequisitionService {
         if (requisition == null)
             throw new ServiceException("Указанная заявка не найдена: " + idRequisite);
 
-        request.forEach((s, o) -> {
-            switch (s) {
+        for (Map.Entry<String, Object> e : request.entrySet()) {
+            switch (e.getKey()) {
                 case "name":
-                    requisition.setName(o.toString());
+                    requisition.setName(e.getValue().toString());
                     break;
                 case "status":
-                    requisition.setStatus(RequisitionStatus.valueOf(o.toString().toUpperCase()));
+                    requisition.setStatus(RequisitionStatus.valueOf(e.getValue().toString().toUpperCase()));
                     break;
                 case "fields":
                     requisition.getFields().clear();
-                    ((Map<String, Object>) o).forEach((s1, o1) -> {
-                        Field field = new Field(s1, o1.toString());
-                        requisition.getFields().add(field);
-                    });
+                    populateFields(requisition, e.getValue());
                     break;
             }
-        });
+        }
         requisitionRepository.save(requisition);
 
         return true;
+    }
+
+    /**
+     * Заполнение полей заявки переданными значениями
+     *
+     * @param requisition - заявление
+     * @param fields      - значения полей
+     * @throws ServiceException - исключения при работе сервиса
+     */
+    private void populateFields(Requisition requisition, Object fields) throws ServiceException {
+        Map<String, Object> map = (Map<String, Object>) fields;
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            String s1 = entry.getKey();
+            Object o1 = entry.getValue();
+            Field field;
+            if (s1.equals("doctorName")) {
+                if (doctorNames.contains(o1.toString()))
+                    field = new Field(s1, o1.toString());
+                else
+                    field = null;
+            } else
+                field = new Field(s1, o1.toString());
+            if (field == null) {
+                throw new ServiceException("Выберите одного из правильных врачей: " + doctorNames);
+            }
+            requisition.getFields().add(field);
+        }
     }
 }
