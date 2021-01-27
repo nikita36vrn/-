@@ -1,9 +1,11 @@
 package ru.praktika.kotouslugi.service;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.praktika.kotouslugi.controller.BaseController;
 import ru.praktika.kotouslugi.dao.CatRepository;
 import ru.praktika.kotouslugi.model.Cat;
 
@@ -13,13 +15,15 @@ import java.util.Optional;
 
 @Service
 public class CatService {
-    private static final Logger logger = LoggerFactory.getLogger(CatService.class);
+
+    private static final Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     @Autowired
     private CatRepository catRepository;
 
+
     public List<Cat> listCat() {
-        List<Cat> list = new LinkedList<>();
+        List <Cat> list = new LinkedList<>();
         Iterable<Cat> all = catRepository.findAll();
         all.forEach(cat -> {
             list.add(cat);
@@ -29,10 +33,11 @@ public class CatService {
 
     public Long addCat(Cat cat) {
         try {
-            cat = catRepository.save(cat);
+            cat =  catRepository.save(cat);
             logger.info("Добавлен кот = ", cat.getName());
-            return cat.getId();
-        } catch (Exception e) {
+            return  cat.getId();
+        } catch (Exception e)
+        {
             logger.error(e.getMessage());
             return null;
         }
@@ -40,15 +45,17 @@ public class CatService {
 
     public Cat getCat(Long id) {
         Optional<Cat> cat = catRepository.findById(id);
-        if(cat.isPresent()) {
-            return cat.get();
+        if (cat.isPresent())
+        {
+           return cat.get();
         }
         return null;
     }
 
     public void deleteCat(Long id) {
         Optional<Cat> cat = catRepository.findById(id);
-        if (cat.isPresent()) {
+        if (cat.isPresent())
+        {
             catRepository.delete(cat.get());
         }
     }
