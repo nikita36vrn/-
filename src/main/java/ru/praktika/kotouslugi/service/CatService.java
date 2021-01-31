@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.praktika.kotouslugi.controller.BaseController;
 import ru.praktika.kotouslugi.dao.CatRepository;
 import ru.praktika.kotouslugi.model.Cat;
 
@@ -14,10 +13,10 @@ import java.util.Optional;
 
 @Service
 public class CatService {
-    private static final Logger logger = LoggerFactory.getLogger(BaseController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CatService.class);
 
     @Autowired
-    public CatRepository catRepository;
+    private CatRepository catRepository;
 
     public List<Cat> listCat() {
         List<Cat> list = new LinkedList<>();
@@ -26,13 +25,12 @@ public class CatService {
             list.add(cat);
         });
         return list;
-
     }
 
     public Long addCat(Cat cat) {
         try {
             cat = catRepository.save(cat);
-            logger.info("Добавлен кот = ", cat);
+            logger.info("Добавлен кот = ", cat.getName());
             return cat.getId();
         } catch (Exception e) {
             logger.error(e.getMessage());
@@ -50,7 +48,7 @@ public class CatService {
 
     public void deleteCat(Long id) {
         Optional<Cat> cat = catRepository.findById(id);
-        if(cat.isPresent()) {
+        if (cat.isPresent()) {
             catRepository.delete(cat.get());
         }
     }

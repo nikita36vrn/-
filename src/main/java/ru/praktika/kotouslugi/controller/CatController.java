@@ -6,8 +6,10 @@ import ru.praktika.kotouslugi.model.Cat;
 import ru.praktika.kotouslugi.service.CatService;
 
 import java.util.List;
+
+
 @RestController
-@RequestMapping("/CatService")
+@RequestMapping("/catService")
 public class CatController {
 
     @Autowired
@@ -23,16 +25,17 @@ public class CatController {
     public Long addCat(@RequestBody Cat cat) {
         return catService.addCat(cat);
     }
+
     @RequestMapping(value = "getCat", method = RequestMethod.GET, produces = "application/json")
     public Cat getCat(@RequestParam Long id) {
         return catService.getCat(id);
     }
+
     @RequestMapping(value = "deleteCat", method = RequestMethod.DELETE, produces = "application/json")
     public void deleteCat(@RequestParam Long id) {
         catService.deleteCat(id);
     }
 }
-
 
 
 
