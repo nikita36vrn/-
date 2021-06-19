@@ -48,3 +48,11 @@ INSERT INTO service_category
 values (4, 2);
 INSERT INTO service_category
 values (5, 3);
+
+-- passport_data
+INSERT INTO passport_data (id,name,date_of_birth,gender,serial_number,date_of_issue,issued_by,code)
+values (0, 'Иванов П.С.',  CAST(DATE '2000-01-01' AS DATE ), 0, '123-123456',  CAST(DATE '2021-01-01' AS DATE ),'ОАО Кем надо', '123-456');
+
+-- contacts
+INSERT INTO contacts (id, address, phone)
+values (0, '123456, г.Хабаровск,ул. Ленина,д. 1, кв. 7', '+71234567890');
