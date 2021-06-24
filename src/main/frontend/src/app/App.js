@@ -11,6 +11,7 @@ import "./style.css"
 import 'semantic-ui-css/semantic.min.css'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import OrdersListPage from "./OrdersList/OrdersListPage";
+import VotingServicePage from "./VotingService/FormPage";
 
 class App extends Component {
 
@@ -35,6 +36,7 @@ class App extends Component {
                         <Switch>
                             <Route path="/" exact component={CatalogPage}/>
                             <Route path="/1" exact render={() => (<TestServicePage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
+                            <Route path="/6" exact render={() => (<VotingServicePage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/orders" exact render={() => (<OrdersListPage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
 
                             <Route component={Page404}/>
