@@ -1,35 +1,43 @@
 package ru.praktika.kotouslugi.model;
 
-
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "service")
 public class KotoServiceEntity {
+
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private String description;
+
+    public List<CategoryEntity> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<CategoryEntity> categories) {
+        this.categories = categories;
+    }
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "service_category",
-            joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "service_id", referencedColumnName = "id"))
-    private List<Category> categories;
+            joinColumns = @JoinColumn(name = "category_id",
+                            referencedColumnName = "id"),
+            inverseJoinColumns =  @JoinColumn(name = "service_id",
+                            referencedColumnName = "id")
+    )
+    private List<CategoryEntity> categories;
 
     public KotoServiceEntity() {
     }
 
-    public KotoServiceEntity(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -49,11 +57,4 @@ public class KotoServiceEntity {
         this.description = description;
     }
 
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
 }
