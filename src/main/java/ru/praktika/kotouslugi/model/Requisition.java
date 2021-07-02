@@ -9,7 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "requisition")
-public class Requisition implements Serializable {
+public class Requisition {
+
     @Id
     @GeneratedValue
     private int id;
@@ -21,7 +22,6 @@ public class Requisition implements Serializable {
 
     public Requisition() {
     }
-
 
     public Requisition(String name, RequisitionStatus status,Integer serviceId) {
         this.name = name;
@@ -69,4 +69,5 @@ public class Requisition implements Serializable {
     public void setFields(List<Field> fields) {
         this.fields = fields;
     }
+
 }

@@ -19,4 +19,3 @@ public class ServiceException extends Exception {
         return data;
     }
 }
-
