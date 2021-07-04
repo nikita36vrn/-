@@ -1,45 +1,36 @@
 package ru.praktika.kotouslugi.model;
 
+
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.LinkedList;
+
 import java.util.List;
 
 @Entity
 @Table(name = "requisition")
-public class Requisition implements Serializable {
+public class Requisition {
     @Id
     @GeneratedValue
     private int id;
     private String name;
     private RequisitionStatus status;
     private int serviceId;
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @OneToMany(fetch = FetchType.LAZY,cascade = {CascadeType.ALL})
     private List<Field> fields;
-
-    public Requisition() {
-    }
-
-
-    public Requisition(String name, RequisitionStatus status,Integer serviceId) {
-        this.name = name;
-        this.status = status;
-        this.fields = new LinkedList<>();
-        this.serviceId = serviceId;
-    }
-
-    public int getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
-    }
 
     public int getId() {
         return id;
+    }
+
+    public Requisition(String name,
+                       RequisitionStatus status,
+                       int serviceId
+                       ) {
+        this.name = name;
+        this.status = status;
+        this.serviceId = serviceId;
+        this.fields = fields;
     }
 
     public void setId(int id) {
@@ -62,11 +53,22 @@ public class Requisition implements Serializable {
         this.status = status;
     }
 
+    public int getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
+    }
+
     public List<Field> getFields() {
         return fields;
     }
 
     public void setFields(List<Field> fields) {
         this.fields = fields;
+    }
+
+    public Requisition() {
     }
 }

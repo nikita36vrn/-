@@ -6,14 +6,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
-public class Category{
+@Table(name="category")
+public class CategoryEntity {
     @Id
     @GeneratedValue
     private int id;
     private String name;
 
-    public Category() {
+
+    public CategoryEntity() {
     }
 
     public int getId() {

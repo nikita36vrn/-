@@ -4,16 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 @Entity
-@Table(name = "field")
-public class Field implements Serializable {
+@Table(name="field")
+public class Field {
     @Id
     @GeneratedValue
     private int id;
     private String name;
-    private String value;
+    private  String value;
 
     public Field() {
     }
@@ -46,12 +45,4 @@ public class Field implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
-
-//    public Requisition getRequisition() {
-//        return requisition;
-//    }
-//
-//    public void setRequisition(Requisition requisition) {
-//        this.requisition = requisition;
-//    }
 }
