@@ -24,7 +24,6 @@ values (5,
         'Зарегистрируй имущество и спи спокойно',
         'Оформление лотка в котореестр');
 
-
 -- category
 INSERT INTO category
 values (0, 'Семья и дети');
@@ -34,6 +33,7 @@ INSERT INTO category
 values (2, 'Социальные услуги');
 INSERT INTO category
 values (3, 'Недвижимость');
+
 
 -- service_to_category
 INSERT INTO service_category

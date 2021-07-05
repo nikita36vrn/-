@@ -2,11 +2,10 @@ package ru.praktika.kotouslugi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.praktika.kotouslugi.dao.CategoryRepository;
-import ru.praktika.kotouslugi.dao.KotoServiceRepository;
-import ru.praktika.kotouslugi.model.Category;
+import ru.praktika.kotouslugi.model.CategoryEntity;
 import ru.praktika.kotouslugi.model.KotoServiceEntity;
-import ru.praktika.kotouslugi.request.RequestId;
+import ru.praktika.kotouslugi.repository.CategoryRepository;
+import ru.praktika.kotouslugi.repository.KotoServiceRepository;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -15,45 +14,31 @@ import java.util.List;
 public class KotoService {
 
     @Autowired
-    private KotoServiceRepository kotoServiceRepository;
+    private KotoServiceRepository KotoServiceRepository;
+
     @Autowired
-    private CategoryRepository categoryRepository;
+    private CategoryRepository CategoryRepository;
 
-    /**
-     * Получение списка всех сервисов
-     *
-     * @return - список сервисов
-     */
-    public List<KotoServiceEntity> listServices() {
-        List<KotoServiceEntity> entityList = new LinkedList<>();
-        Iterable<KotoServiceEntity> serviceEntities = kotoServiceRepository.findAll();
-        serviceEntities.forEach(entityList::add);
-        return entityList;
-    }
-
-    /**
-     * Получение сервиса по его id
-     *
-     * @param request - запрос с id сервиса
-     * @return искомый сервис
-     */
-    public KotoServiceEntity getServiceById(RequestId request) {
-        KotoServiceEntity result = null;
-        KotoServiceEntity serviceEntity = kotoServiceRepository.findByServiceId(request.getId());
-        if (serviceEntity != null)
-            result = serviceEntity;
+    public List<KotoServiceEntity> listService() {
+        List<KotoServiceEntity> result = new LinkedList<>();
+        Iterable<KotoServiceEntity> all = KotoServiceRepository.findAll();
+        all.forEach(result::add);
         return result;
     }
 
-    /**
-     * получение списка категорий
-     *
-     * @return список категорий
-     */
-    public List<Category> listCategories() {
-        List<Category> result = new LinkedList<>();
-        Iterable<Category> categories = categoryRepository.findAll();
-        categories.forEach(result::add);
+    public List<CategoryEntity> listCategories() {
+        List<CategoryEntity> result = new LinkedList<>();
+        Iterable<CategoryEntity> all = CategoryRepository.findAll();
+        all.forEach(result::add);
+        return result;
+    }
+
+    public KotoServiceEntity getServiceById(String id) {
+        KotoServiceEntity result = null;
+        KotoServiceEntity byId = KotoServiceRepository.getKotoServiceById(Integer.parseInt(id));
+        if (byId !=null) {
+            result = byId;
+        }
         return result;
     }
 }

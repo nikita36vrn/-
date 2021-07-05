@@ -1,12 +1,13 @@
 package ru.praktika.kotouslugi.service;
 
+
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.praktika.kotouslugi.dao.RequisitionRepository;
-import ru.praktika.kotouslugi.exception.ServiceException;
 import ru.praktika.kotouslugi.model.Field;
 import ru.praktika.kotouslugi.model.Requisition;
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
+import ru.praktika.kotouslugi.repository.RequisitionRepository;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -20,8 +21,8 @@ public class RequisitionService {
 
     public List<Requisition> listRequisition() {
         List<Requisition> result = new LinkedList<>();
-        Iterable<Requisition> requisitions = requisitionRepository.findAll();
-        requisitions.forEach(result::add);
+        Iterable<Requisition> all = requisitionRepository.findAll();
+        all.forEach(result::add);
         return result;
     }
 
