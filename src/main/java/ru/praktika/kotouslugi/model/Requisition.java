@@ -3,13 +3,12 @@ package ru.praktika.kotouslugi.model;
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 @Entity
 @Table(name = "requisition")
-public class Requisition implements Serializable {
+public class Requisition {
     @Id
     @GeneratedValue
     private int id;

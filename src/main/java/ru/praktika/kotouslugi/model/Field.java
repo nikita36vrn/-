@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "field")
-public class Field implements Serializable {
+public class Field {
     @Id
     @GeneratedValue
     private int id;
