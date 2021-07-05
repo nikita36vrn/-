@@ -1,5 +1,6 @@
 package ru.praktika.kotouslugi.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,13 +8,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "category")
-public class Category{
+public class CategoryEntity {
+
+
     @Id
     @GeneratedValue
     private int id;
     private String name;
 
-    public Category() {
+    public CategoryEntity() {
     }
 
     public int getId() {
@@ -31,4 +34,5 @@ public class Category{
     public void setName(String name) {
         this.name = name;
     }
+
 }

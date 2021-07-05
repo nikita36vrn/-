@@ -3,13 +3,9 @@ package ru.praktika.kotouslugi.model.enums;
 public enum RequisitionStatus {
 
     DRAFT("черновик"),
-    FILED("подана"),
-    UNDER_CONSIDERATION("на рассмотрении"),
-    TRANSFERRED_TO_THE_MINISTRY("передана в министерство"),
-    REJECTED("отклонена"),
-    ACCEPTED("принята"),
-    BLOCKED("заблокирована"),
-    DELETED("удалено");
+    FIELD("подача"),
+    UNDER_CONSIDERATTION("на рассмотрении"),
+    ACCEPTED("Принята");
 
     private String message;
 
