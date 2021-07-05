@@ -7,13 +7,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "category")
-public class Category{
+public class CategoryEntity {
     @Id
     @GeneratedValue
     private int id;
     private String name;
 
-    public Category() {
+    public CategoryEntity() {
+    }
+
+    public CategoryEntity(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public int getId() {

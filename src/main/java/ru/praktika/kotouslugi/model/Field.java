@@ -46,12 +46,4 @@ public class Field implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
-
-//    public Requisition getRequisition() {
-//        return requisition;
-//    }
-//
-//    public void setRequisition(Requisition requisition) {
-//        this.requisition = requisition;
-//    }
 }

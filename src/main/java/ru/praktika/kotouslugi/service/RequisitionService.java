@@ -1,12 +1,13 @@
 package ru.praktika.kotouslugi.service;
 
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.praktika.kotouslugi.dao.RequisitionRepository;
-import ru.praktika.kotouslugi.exception.ServiceException;
+
 import ru.praktika.kotouslugi.model.Field;
 import ru.praktika.kotouslugi.model.Requisition;
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
+import ru.praktika.kotouslugi.repository.RequisitionRepository;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class RequisitionService {
         return result;
     }
 
-    public int createRequisition(Map<String, Object> request) {
+    public Integer createRequisition(Map<String, Object> request) {
 
         Requisition requisition = new Requisition("Заявление", RequisitionStatus.DRAFT, 1);
         request.forEach((s, o) -> {

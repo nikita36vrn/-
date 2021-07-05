@@ -23,7 +23,7 @@ public class Requisition implements Serializable {
     }
 
 
-    public Requisition(String name, RequisitionStatus status,Integer serviceId) {
+    public Requisition(String name, RequisitionStatus status, Integer serviceId) {
         this.name = name;
         this.status = status;
         this.fields = new LinkedList<>();
