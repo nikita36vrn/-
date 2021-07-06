@@ -4,14 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "field")
-public class Field implements Serializable {
+public class Field {
+
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private String value;
 
@@ -23,11 +23,11 @@ public class Field implements Serializable {
         this.value = value;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -46,12 +46,4 @@ public class Field implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
-
-//    public Requisition getRequisition() {
-//        return requisition;
-//    }
-//
-//    public void setRequisition(Requisition requisition) {
-//        this.requisition = requisition;
-//    }
 }

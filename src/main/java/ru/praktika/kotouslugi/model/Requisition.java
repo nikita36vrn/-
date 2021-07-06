@@ -3,46 +3,23 @@ package ru.praktika.kotouslugi.model;
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
 
 @Entity
 @Table(name = "requisition")
-public class Requisition implements Serializable {
-    @Id
-    @GeneratedValue
-    private int id;
+public class Requisition {
+    private Long id;
     private String name;
     private RequisitionStatus status;
-    private int serviceId;
+    private Integer serviceId;
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     private List<Field> fields;
 
-    public Requisition() {
-    }
-
-
-    public Requisition(String name, RequisitionStatus status,Integer serviceId) {
-        this.name = name;
-        this.status = status;
-        this.fields = new LinkedList<>();
-        this.serviceId = serviceId;
-    }
-
-    public int getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,6 +39,30 @@ public class Requisition implements Serializable {
         this.status = status;
     }
 
+    public Integer getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(Integer serviceId) {
+        this.serviceId = serviceId;
+    }
+
+    public Requisition(){
+
+    }
+    public Requisition(String name, RequisitionStatus status, Integer serviceId) {
+        this.name = name;
+        this.status = status;
+        this.serviceId = serviceId;
+    }
+//    public Requisition(Long id, String name, RequisitionStatus status, Integer serviceId, List<Field> fields) {
+//        this.id = id;
+//        this.name = name;
+//        this.status = status;
+//        this.serviceId = serviceId;
+//        this.fields = fields;
+//    }
+
     public List<Field> getFields() {
         return fields;
     }
@@ -69,4 +70,6 @@ public class Requisition implements Serializable {
     public void setFields(List<Field> fields) {
         this.fields = fields;
     }
+
+
 }
