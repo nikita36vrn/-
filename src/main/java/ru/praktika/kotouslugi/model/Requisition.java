@@ -3,13 +3,11 @@ package ru.praktika.kotouslugi.model;
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
 
 @Entity
 @Table(name = "requisition")
-public class Requisition implements Serializable {
+public class Requisition {
     @Id
     @GeneratedValue
     private int id;
@@ -22,21 +20,13 @@ public class Requisition implements Serializable {
     public Requisition() {
     }
 
+    public Requisition(String name, RequisitionStatus status, int serviceId) {
+        this.setName(name);
+        this.setStatus(status);
+        this.setServiceId(serviceId);
 
-    public Requisition(String name, RequisitionStatus status,Integer serviceId) {
-        this.name = name;
-        this.status = status;
-        this.fields = new LinkedList<>();
-        this.serviceId = serviceId;
     }
 
-    public int getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
-    }
 
     public int getId() {
         return id;
@@ -60,6 +50,14 @@ public class Requisition implements Serializable {
 
     public void setStatus(RequisitionStatus status) {
         this.status = status;
+    }
+
+    public int getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
     }
 
     public List<Field> getFields() {

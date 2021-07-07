@@ -3,19 +3,15 @@ package ru.praktika.kotouslugi.model.enums;
 public enum RequisitionStatus {
 
     DRAFT("черновик"),
-    FILED("подана"),
+    FIELD("подача"),
     UNDER_CONSIDERATION("на рассмотрении"),
-    TRANSFERRED_TO_THE_MINISTRY("передана в министерство"),
-    REJECTED("отклонена"),
-    ACCEPTED("принята"),
-    BLOCKED("заблокирована"),
-    DELETED("удалено");
+    ACCEPTED("принята");
 
     private String message;
-
     RequisitionStatus(String message) {
-        this.message = message;
+        this.setMessage(message);
     }
+
 
     public String getMessage() {
         return message;
@@ -25,3 +21,5 @@ public enum RequisitionStatus {
         this.message = message;
     }
 }
+
+
