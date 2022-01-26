@@ -23,6 +23,10 @@ INSERT INTO service
 values (5,
         'Зарегистрируй имущество и спи спокойно',
         'Оформление лотка в котореестр');
+INSERT INTO service
+values (6,
+        'Еще нет ветеринарного паспорта? Тогда создайте заявку на получение прямо сейчас!',
+        'Получение ветеринарного паспорта');
 
 
 -- category
@@ -48,3 +52,5 @@ INSERT INTO service_category
 values (4, 2);
 INSERT INTO service_category
 values (5, 3);
+INSERT INTO service_category
+values (6, 1);
