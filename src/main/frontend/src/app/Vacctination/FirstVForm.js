@@ -23,7 +23,7 @@ export default class FirstStepForm extends Component {
                         />
                     </div>
                     <div className="field">
-                        <label>Название породы</label>
+                        <label>Порода</label>
                         <input
                             type="text"
                             name="lastName"
@@ -80,7 +80,7 @@ export default class FirstStepForm extends Component {
                     </div>
                 </div>
 
-                <h4 className="ui dividing header">Информация для связи</h4>
+                {/*<h4 className="ui dividing header">Информация для связи</h4>
                 <div className="two fields">
                     <div className="field">
                         <label>Почта</label>
@@ -113,7 +113,7 @@ export default class FirstStepForm extends Component {
                         </InputMask>
 
                     </div>
-                </div>
+                </div>*/}
                 <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
                     Далее<i aria-hidden="true" className="right arrow icon"></i>
                 </button>
