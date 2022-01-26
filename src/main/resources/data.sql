@@ -23,6 +23,10 @@ INSERT INTO service
 values (5,
         'Зарегистрируй имущество и спи спокойно',
         'Оформление лотка в котореестр');
+INSERT INTO service
+values (6,
+        'Тест',
+        'Тест');
 
 
 -- category
