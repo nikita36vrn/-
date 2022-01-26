@@ -1,8 +1,8 @@
 -- service
 INSERT INTO service
 values (0,
-        'При рождении трех и более котят вы можете получить субсидии в виде пачки корма.',
-        'Регистрация рождения котят');
+        'Предотврати болезнь котика. Запиши его на вакцинацию!',
+        'Вакцинация');
 INSERT INTO service
 values (1,
         'Подходи ответственно к здоровью питомца. Здоровый кот - мало хлопот.',
@@ -27,7 +27,7 @@ values (5,
 
 -- category
 INSERT INTO category
-values (0, 'Семья и дети');
+values (0, 'Медицина');
 INSERT INTO category
 values (1, 'Медицина');
 INSERT INTO category

@@ -1,4 +1,4 @@
-import catIcon1 from "../../../public/static/images/icons/cat_walk.png"
+import catIcon1 from "../../../public/static/images/icons/cat_drunk.png"
 import catIcon2 from "../../../public/static/images/icons/cat_pirate.png"
 import catIcon3 from "../../../public/static/images/icons/cat_clean.png"
 import catIcon4 from "../../../public/static/images/icons/cat_gift.png"
