@@ -25,8 +25,8 @@ values (5,
         'Оформление лотка в котореестр');
 INSERT INTO service
 values (6,
-        'ТЕстовые кошкодевочки',
-        'Онлайн кошкодевочки без регистрации и смс');
+        'Регистрация ВетПаспорта',
+        'Оформление ВетПаспорта');
 
 
 -- category
@@ -39,7 +39,7 @@ values (2, 'Социальные услуги');
 INSERT INTO category
 values (3, 'Недвижимость');
 INSERT INTO category
-values (4, 'HW_TEST');
+values (4, 'ВетПаспорт');
 
 -- service_to_category
 INSERT INTO service_category
