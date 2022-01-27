@@ -17,7 +17,7 @@ export default class VetCallSecondStepForm extends Component {
                                 name="Prichina"
                                 placeholder="ФИО ветеринара"
                                 onChange={this.props.handleChange}
-                                value={fields.prichina ? fields.prichina.value : undefined}
+                                value={fields.port ? fields.port.value : undefined}
                             />
                         </div>
 

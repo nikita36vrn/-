@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Step from "./VetCallStepper";
 import VetCallFirstStepForm from "./VetCallFirstStepForm";
 import VetCallSecondStepForm from "./VetCallSecondStepForm";
-import ThirdStepForm from "./VetCallThirdStepForm";
+import VetCallThirdStepForm from "./VetCallThirdStepForm";
 import axios from "axios";
 
 export default class VetCallServicePage extends Component {
@@ -46,7 +46,7 @@ export default class VetCallServicePage extends Component {
         params.name = 'Название услуги';
         params.fields = preparedFields;
         params.status = "ACCEPTED";
-        params.serviceId=1;
+        params.serviceId=6;
         axios.post('api/requisition/createRequisition', params).then(() => {
             alert("Заявка успешно подана");
             window.location.assign('/')
@@ -89,7 +89,7 @@ export default class VetCallServicePage extends Component {
                     : null}
 
                 {activeStep === 2 ?
-                    <ThirdStepForm
+                    <VetCallThirdStepForm
                         submitForm={this.submitForm}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}

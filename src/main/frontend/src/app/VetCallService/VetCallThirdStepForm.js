@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class ThirdStepForm extends Component {
+export default class VetCallThirdStepForm extends Component {
 
     render() {
         const {fields} = this.props;

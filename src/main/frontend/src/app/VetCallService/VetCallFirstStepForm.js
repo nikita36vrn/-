@@ -6,8 +6,6 @@ export default class VetCallFirstStepForm extends Component {
     render() {
 
         const {fields} = this.props;
-        fields.gender = undefined;
-        fields.poroda = undefined;
 
         return (
             <div className="ui form">
@@ -31,7 +29,7 @@ export default class VetCallFirstStepForm extends Component {
                             name="poroda"
                             placeholder="Порода котика"
                             onChange={this.props.handleChange}
-                            value={fields.poroda ? fields.poroda.value : undefined}
+                            value={fields.lastName ? fields.lastName.value : undefined}
                         />
                     </div>
                 </div>
@@ -44,7 +42,7 @@ export default class VetCallFirstStepForm extends Component {
                             name="adress"
                             placeholder="Адрес проживания котика"
                             onChange={this.props.handleChange}
-                            value={fields.adress ? fields.adress.value : undefined}
+                            value={fields.address ? fields.address.value : undefined}
                         />
                     </div>
 
@@ -60,7 +58,7 @@ export default class VetCallFirstStepForm extends Component {
                                         // defaultChecked={true}
                                         placeholder="Пол котика"
                                         value='male'
-                                        checked={fields.gender ? fields.gender.value === 'male' : true }
+                                        checked={fields.sex ? fields.sex.value === 'male' : true }
                                     />
                                     <label>Кот</label>
                                 </div>
