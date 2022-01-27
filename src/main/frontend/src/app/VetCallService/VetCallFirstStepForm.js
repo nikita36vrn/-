@@ -7,6 +7,22 @@ export default class VetCallFirstStepForm extends Component {
 
         const {fields} = this.props;
 
+        function getDisabled() {
+            if (fields.name) {
+                if (fields.name.value === "") { return true }
+            } else { return true }
+            if (fields.lastName) {
+                if (fields.lastName.value === "") { return true }
+            } else { return true }
+            if (fields.address) {
+                if (fields.address.value === "") { return true }
+            } else { return true }
+            if (fields.phone) {
+                if (fields.phone.value === "") { return true }
+            } else { return true }
+            return false
+        }
+
         return (
             <div className="ui form">
                 <h4 className="ui dividing header">Персональная информация</h4>
@@ -19,17 +35,17 @@ export default class VetCallFirstStepForm extends Component {
                             name="name"
                             placeholder="Имя котика"
                             onChange={this.props.handleChange}
-                            value={fields.name ? fields.name.value : undefined}
+                            value={fields.name ? fields.name.value : ""}
                         />
                     </div>
                     <div className="field">
                         <label>Порода котика</label>
                         <input
                             type="text"
-                            name="poroda"
+                            name="lastName"
                             placeholder="Порода котика"
                             onChange={this.props.handleChange}
-                            value={fields.lastName ? fields.lastName.value : undefined}
+                            value={fields.lastName ? fields.lastName.value : ""}
                         />
                     </div>
                 </div>
@@ -39,10 +55,10 @@ export default class VetCallFirstStepForm extends Component {
                         <label>Адрес проживания котика</label>
                         <input
                             type="text"
-                            name="adress"
+                            name="address"
                             placeholder="Адрес проживания котика"
                             onChange={this.props.handleChange}
-                            value={fields.address ? fields.address.value : undefined}
+                            value={fields.address ? fields.address.value : ""}
                         />
                     </div>
 
@@ -53,7 +69,7 @@ export default class VetCallFirstStepForm extends Component {
                                 <div className="ui radio checkbox">
                                     <input
                                         type="radio"
-                                        name="gender"
+                                        name="sex"
                                         onChange={this.props.handleChange}
                                         // defaultChecked={true}
                                         placeholder="Пол котика"
@@ -70,7 +86,7 @@ export default class VetCallFirstStepForm extends Component {
                                         name="sex"
                                         onChange={this.props.handleChange}
                                         value={'female'}
-                                        checked={fields.gender ? fields.gender.value === 'female' : false }
+                                        checked={fields.sex ? fields.sex.value === 'female' : false }
                                         placeholder="Пол котика"
                                     />
                                     <label>Кошка</label>
@@ -86,21 +102,24 @@ export default class VetCallFirstStepForm extends Component {
                         <label>Контактный телефон хозяина</label>
                         <InputMask
                             mask="+7(999)999 99 99"
-                            value={fields.phone ? fields.phone.value : undefined}
+                            value={fields.phone ? fields.phone.value : ""}
                             onChange={this.props.handleChange}>
                             {() =>
                                 <input
                                 type="text"
                                 name="phone"
                                 placeholder="Контактный телефон хозяина"
-                            />
+                                />
                             }
                         </InputMask>
 
                     </div>
                 </div>
-                <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
-                    Далее<i aria-hidden="true" className="right arrow icon"></i>
+                <button
+                    className="ui icon right labeled button primary right floated"
+                    disabled={getDisabled()}
+                    onClick={this.props.changeStepNext}>
+                    Далее<i aria-hidden="true" className="right arrow icon"/>
                 </button>
             </div>
         )

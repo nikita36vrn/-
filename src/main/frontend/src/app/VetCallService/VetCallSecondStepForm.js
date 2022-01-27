@@ -3,6 +3,12 @@ import React, {Component} from 'react';
 export default class VetCallSecondStepForm extends Component {
 
     render() {
+        function getDisabled() {
+            if (fields.port) {
+                if (fields.port.value === "") { return true }
+            } else { return true }
+            return false
+        }
         const {fields} = this.props;
         return (
             <div>
@@ -14,7 +20,7 @@ export default class VetCallSecondStepForm extends Component {
                             <label>Причина вызова</label>
                             <input
                                 type="text"
-                                name="Prichina"
+                                name="port"
                                 placeholder="ФИО ветеринара"
                                 onChange={this.props.handleChange}
                                 value={fields.port ? fields.port.value : undefined}
@@ -48,11 +54,11 @@ export default class VetCallSecondStepForm extends Component {
                         </div>
                     </div>
 
-                    <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
-                        Далее<i aria-hidden="true" className="right arrow icon"></i>
+                    <button className="ui icon right labeled button primary right floated" disabled={getDisabled()} onClick={this.props.changeStepNext}>
+                        Далее<i aria-hidden="true" className="right arrow icon"/>
                     </button>
                     <button className="ui icon left labeled button primary left floated" onClick={this.props.changeStepPrev}>
-                        <i aria-hidden="true" className="left arrow icon"></i>Назад
+                        <i aria-hidden="true" className="left arrow icon"/>Назад
                     </button>
                 </div>
             </div>
