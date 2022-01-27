@@ -7,7 +7,7 @@ export default class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="ui container ">
-                    footer надо прибить вниз)
+                    Да вроде норм. :|
                 </div>
             </footer>
         )
