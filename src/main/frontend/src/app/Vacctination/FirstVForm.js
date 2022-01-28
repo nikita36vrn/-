@@ -80,40 +80,7 @@ export default class FirstVForm extends Component {
                     </div>
                 </div>
 
-                <h4 className="ui dividing header">Информация для связи</h4>
-                <div className="two fields">
-                    <div className="field">
-                        <label>Почта</label>
-                        <InputMask
-                            mask="*******@****.***"
-                            value={fields.email ? fields.email.value : undefined}
-                            onChange={this.props.handleChange}>
-                            {() =>
-                                <input
-                                    type="text"
-                                    name="email"
-                                    placeholder="Почта"
-                                />
-                            }
-                        </InputMask>
-                    </div>
-                    <div className="field">
-                        <label>Телефон</label>
-                        <InputMask
-                            mask="+7(999)999 99 99"
-                            value={fields.phone ? fields.phone.value : undefined}
-                            onChange={this.props.handleChange}>
-                            {() =>
-                                <input
-                                    type="text"
-                                    name="phone"
-                                    placeholder="Телефон"
-                                />
-                            }
-                        </InputMask>
 
-                    </div>
-                </div>
                 <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
                     Далее<i aria-hidden="true" className="right arrow icon"></i>
                 </button>

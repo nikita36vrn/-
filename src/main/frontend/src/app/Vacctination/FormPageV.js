@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import Step from "./Stepper";
-import FirstStepForm from "./FirstStepForm";
-import SecondStepForm from "./SecondStepForm";
-import ThirdStepForm from "./ThirdStepForm";
+import StepV from "./StepperV";
+import FirstVForm from "./FirstVForm";
+import SecondVForm from "./SecondVForm";
+import ThirdVForm from "./ThirdVForm";
 import axios from "axios";
 import icon404 from "../../../public/static/images/404.png";
 
-export default class TestServicePage extends Component {
+export default class TestV extends Component {
 
     state = {
         activeStep: 0,
@@ -70,18 +70,20 @@ export default class TestServicePage extends Component {
         const {activeStep} = this.state;
         return (
             <div className="">
-                <Step activeStepNumber={this.state.activeStep}/>
-                     {activeStep === 0 ?
-                    <FirstStepForm
-                       changeStepNext={this.changeStepNext}
+                <StepV activeStepNumber={this.state.activeStep}/>
+                {activeStep === 0 ?
+                    < FirstVForm
+
+                        /*FirstStepForm*/
+                        changeStepNext={this.changeStepNext}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}
                         fields={this.state.fields}
-                         />
+                    />
                     : null}
 
                 {activeStep === 1 ?
-                    <SecondStepForm
+                    <SecondVForm
                         changeStepNext={this.changeStepNext}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}
@@ -90,7 +92,7 @@ export default class TestServicePage extends Component {
                     : null}
 
                 {activeStep === 2 ?
-                    <ThirdStepForm
+                    <ThirdVForm
                         submitForm={this.submitForm}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}
