@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 
+
 export default class SecondVForm extends Component {
+
 
     render() {
         const {fields} = this.props;
         return (
             <div>
                 <div className="ui form">
-                    <h4 className="ui dividing header">Выбор специалиста</h4>
+                    <h4 className="ui dividing header">Информация о записи</h4>
 
                     <div className="two fields">
                         <div className="field">
@@ -52,6 +54,8 @@ export default class SecondVForm extends Component {
                                 placeholder="Дата приема"
                                 onChange={this.props.handleChange}
                                 value={fields.Date_pr ? fields.Date_pr.value:undefined }
+                                min="2022-01-28"
+                                max="2022-03-28"
 
                             />
                         </div>

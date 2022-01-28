@@ -3,13 +3,13 @@ import React, {Component} from 'react';
 
 const stepsV = [
     {
-        name: 'Информация о пациенте',
-        description: 'Укажите необходимую информацию о пациенте',
+        name: 'Личная информация о котике',
+        description: 'Укажите необходимую информацию о котике',
         icon: 'paw icon'
     },
     {
-        name: 'Выбор специалиста',
-        description: 'Укажите специалиста и время приема',
+        name: 'Информация о записи',
+        description: 'Выберите дату, вакцину и место вакцинации',
         icon: 'hospital icon'
     },
     {

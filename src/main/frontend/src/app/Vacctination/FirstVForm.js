@@ -9,7 +9,7 @@ export default class FirstVForm extends Component {
 
         return (
             <div className="ui form">
-                <h4 className="ui dividing header">Персональная информация</h4>
+                <h4 className="ui dividing header">Личная информация о котике</h4>
 
                 <div className="two fields">
                     <div className="field">
@@ -44,8 +44,10 @@ export default class FirstVForm extends Component {
                             onChange={this.props.handleChange}
                             value={fields.age ? fields.age.value:undefined }
                             max={"25"}
-                            min={"0"}
+                            min={"1"}
+
                         />
+
                     </div>
 
                     <div className="field">
