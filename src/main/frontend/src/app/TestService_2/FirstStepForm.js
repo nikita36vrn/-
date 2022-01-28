@@ -41,7 +41,7 @@ export default class FirstStepForm extends Component {
                         <label> Окрас шерсти </label>
                         <input
                             type="text"
-                            names="W_name"
+                            name="W_name"
                             placeholder=" Окрас шерсти "
                             onChange={this.props.handleChange}
                             value={fields.W_name ? fields.W_name.value : undefined}
@@ -66,10 +66,8 @@ export default class FirstStepForm extends Component {
                     <div className="field">
                         <label>Возраст</label>
                         <input
-                            type="date" id="start" name="trip-start"
-                            value="2018-07-22"
+                            type="date" id="start" name="age"
                             min="2001-01-01" max="2022-12-31"
-                            name="age"
                             placeholder="Возраст"
                             onChange={this.props.handleChange}
                             value={fields.age ? fields.age.value : undefined}
