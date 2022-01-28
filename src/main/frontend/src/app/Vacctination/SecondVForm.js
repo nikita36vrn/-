@@ -19,6 +19,7 @@ export default class SecondVForm extends Component {
                                 onChange={this.props.handleChange}
                                 value={fields.vacctina ? fields.vacctina.value : undefined}
                             >
+                                <option value="проб"> </option>
                             <option value="Котоспутник">Котоспутник</option>
                             <option value="Котолайт">Котолайт</option>
                             <option value="Пришелиц_5">Пришелиц_5</option>
@@ -34,6 +35,7 @@ export default class SecondVForm extends Component {
                                 onChange={this.props.handleChange}
                                 value={fields.Klinika ? fields.Klinika.value : undefined}
                             >
+                                <option value="проб"> </option>
                             <option value="Котовасия">Котовасия ул.ПеревернулВазу 6</option>
                             <option value="СуперКот">СуперКот ул.Мяуразбужувсех 13</option>
                                 <option value="Тыгыдык">Тыгыдык ул.Миминишкина 2</option>
@@ -60,6 +62,7 @@ export default class SecondVForm extends Component {
                                 title='Время приема'
                                 value={fields.time ? fields.time.value : undefined}
                             >
+                                <option value="проб"> </option>
                                 <option value="8:00">8:00</option>
                                 <option value="9:00">9:00</option>
                                 <option value="10:00">10:00</option>
