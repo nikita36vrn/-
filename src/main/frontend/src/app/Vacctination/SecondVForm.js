@@ -12,23 +12,33 @@ export default class SecondVForm extends Component {
                     <div className="two fields">
                         <div className="field">
                             <label>Вакцина</label>
-                            <input
+                            <select
                                 type="text"
                                 name="vacctina"
                                 placeholder="Вакцина"
                                 onChange={this.props.handleChange}
                                 value={fields.vacctina ? fields.vacctina.value : undefined}
-                            />
+                            >
+                            <option value="Котоспутник">Котоспутник</option>
+                            <option value="Котолайт">Котолайт</option>
+                            <option value="Пришелиц_5">Пришелиц_5</option>
+                            <option value="Котовац">Котовац</option>
+                        </select>
                         </div>
                         <div className="field">
                             <label>Клиника</label>
-                            <input
+                            <select
                                 type="text"
                                 name="Klinika"
                                 placeholder="Клиника"
                                 onChange={this.props.handleChange}
                                 value={fields.Klinika ? fields.Klinika.value : undefined}
-                            />
+                            >
+                            <option value="Котовасия">Котовасия ул.ПеревернулВазу 6</option>
+                            <option value="СуперКот">СуперКот ул.Мяуразбужувсех 13</option>
+                                <option value="Тыгыдык">Тыгыдык ул.Миминишкина 2</option>
+
+                         </select>
                         </div>
                     </div>
                     <div className="two fields">
