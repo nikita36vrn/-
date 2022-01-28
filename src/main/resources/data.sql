@@ -25,8 +25,8 @@ values (5,
         'Оформление лотка в котореестр');
 INSERT INTO service
 values (6,
-        'Регистрация ВетПаспорта',
-        'Оформление ВетПаспорта');
+        'ВетПаспорт',
+        'Документы на все случаи жызни');
 
 
 -- category
@@ -39,7 +39,7 @@ values (2, 'Социальные услуги');
 INSERT INTO category
 values (3, 'Недвижимость');
 INSERT INTO category
-values (4, 'ВетПаспорт');
+values (4, 'Оформление Документов');
 
 -- service_to_category
 INSERT INTO service_category
@@ -56,31 +56,6 @@ INSERT INTO service_category
 values (5, 3);
 INSERT INTO service_category
 values (6, 4);
-
-
--- category
-INSERT INTO category
-values (0, 'Семья и дети');
-INSERT INTO category
-values (1, 'Медицина');
-INSERT INTO category
-values (2, 'Социальные услуги');
-INSERT INTO category
-values (3, 'Недвижимость');
-
--- service_to_category
-INSERT INTO service_category
-values (0, 0);
-INSERT INTO service_category
-values (1, 1);
-INSERT INTO service_category
-values (2, 1);
-INSERT INTO service_category
-values (3, 2);
-INSERT INTO service_category
-values (4, 2);
-INSERT INTO service_category
-values (5, 3);
 
 -- CAT_INFO
 CREATE TABLE CAT_INFO

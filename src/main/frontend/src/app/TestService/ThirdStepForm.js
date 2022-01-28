@@ -30,7 +30,7 @@ export default class ThirdStepForm extends Component {
                     className="ui icon left labeled button primary left floated"
                     onClick={this.props.changeStepPrev}
                 >
-                    <i aria-hidden="true" className="left arrow icon"></i>Назад
+                    <i aria-hidden="true" className="left arrow icon"> </i>Назад
                 </button>
             </div>
 

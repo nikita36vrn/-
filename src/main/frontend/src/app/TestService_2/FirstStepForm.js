@@ -29,13 +29,13 @@ export default class FirstStepForm extends Component {
                             name="lastName"
                             placeholder="Британец"
                             onChange={this.props.handleChange}
-                            value={fields.lastName ? fields.lastName.value : undefined}
+                            value={fields.Name ? fields.Name.value : undefined}
                         />
                     </div>
                 </div>
                 <div className="two fields">
                     <div className="field">
-                        <label>Окрас глаз</label>
+                        <label>Цвет глаз</label>
                         <input
                             type="text"
                             name="name"
@@ -51,7 +51,7 @@ export default class FirstStepForm extends Component {
                             name="lastName"
                             placeholder="каштановый"
                             onChange={this.props.handleChange}
-                            value={fields.lastName ? fields.lastName.value : undefined}
+                            value={fields.name ? fields.Name.value : undefined}
                         />
                     </div>
                     <div className="field323">
@@ -61,7 +61,7 @@ export default class FirstStepForm extends Component {
                             name="lastName"
                             placeholder="Например: отсутствует левое ушко"
                             onChange={this.props.handleChange}
-                            value={fields.lastName ? fields.lastName.value : undefined}
+                            value={fields.Name ? fields.Name.value : undefined}
                         />
                     </div>
                 </div>
@@ -96,7 +96,7 @@ export default class FirstStepForm extends Component {
                                         // defaultChecked={true}
                                         placeholder="Пол"
                                         value='male'
-                                        checked={fields.sex ? fields.sex.value === 'male' : true }
+                                        checked={fields.name ? fields.name.value === 'male' : true }
                                     />
                                     <label>Кот</label>
                                 </div>
@@ -108,7 +108,7 @@ export default class FirstStepForm extends Component {
                                         name="sex"
                                         onChange={this.props.handleChange}
                                         value={'female'}
-                                        checked={fields.sex ? fields.sex.value === 'female' : false }
+                                        checked={fields.name ? fields.name.value === 'female' : false }
                                         placeholder="Пол"
                                     />
                                     <label>Кошка</label>
