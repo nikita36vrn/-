@@ -52,6 +52,7 @@ export default class SecondVForm extends Component {
                                 placeholder="Дата приема"
                                 onChange={this.props.handleChange}
                                 value={fields.Date_pr ? fields.Date_pr.value:undefined }
+
                             />
                         </div>
                         <div className="field">

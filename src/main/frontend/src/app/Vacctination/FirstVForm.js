@@ -43,6 +43,8 @@ export default class FirstVForm extends Component {
                             placeholder="Возраст"
                             onChange={this.props.handleChange}
                             value={fields.age ? fields.age.value:undefined }
+                            max={"25"}
+                            min={"0"}
                         />
                     </div>
 
