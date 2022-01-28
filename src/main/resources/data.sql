@@ -25,8 +25,8 @@ values (5,
         'Оформление лотка в котореестр');
 INSERT INTO service
 values (6,
-        'ВетПаспорт',
-        'Документы на все случаи жызни');
+        'Оформление Документов',
+        'Документы на все случаи жизни');
 
 
 -- category
@@ -39,7 +39,7 @@ values (2, 'Социальные услуги');
 INSERT INTO category
 values (3, 'Недвижимость');
 INSERT INTO category
-values (4, 'Оформление Документов');
+values (4, 'ВетПаспорт');
 
 -- service_to_category
 INSERT INTO service_category

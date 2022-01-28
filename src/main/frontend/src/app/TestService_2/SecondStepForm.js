@@ -15,9 +15,9 @@ export default class SecondStepForm extends Component {
                             <input
                                 type="text"
                                 name="doctorName"
-                                placeholder="Зубенко Михаил Петрович"
+                                placeholder="ФИО ветеринара"
                                 onChange={this.props.handleChange}
-                                value={fields.name ? fields.name.value : undefined}
+                                value={fields.doctorName ? fields.doctorName.value : undefined}
                             />
                         </div>
                         <div className="field">
