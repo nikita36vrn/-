@@ -23,7 +23,7 @@ export default class VetCallSecondStepForm extends Component {
                                 name="port"
                                 placeholder="ФИО ветеринара"
                                 onChange={this.props.handleChange}
-                                value={fields.port ? fields.port.value : undefined}
+                                value={fields.port ? fields.port.value : ""}
                             />
                         </div>
 
@@ -37,7 +37,7 @@ export default class VetCallSecondStepForm extends Component {
                                 name="Дата вызова"
                                 placeholder="Дата вызова"
                                 onChange={this.props.handleChange}
-                                value={fields.date ? fields.date.value : undefined}
+                                value={fields.date ? fields.date.value : ""}
                             />
                         </div>
                         <div className="field">
@@ -46,7 +46,7 @@ export default class VetCallSecondStepForm extends Component {
                                 name="time"
                                 onChange={this.props.handleChange}
                                 title='Время Вызова'
-                                value={fields.time ? fields.time.value : undefined}
+                                value={fields.time ? fields.time.value : ""}
                             >
                                 <option value="10:00">10:00</option>
                                 <option value="11:00">11:00</option>

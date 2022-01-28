@@ -39,7 +39,7 @@ export default class VetCallServicePage extends Component {
     submitForm = () => {
         const {fields} = this.state;
         let params = {};
-        let preparedFields = {};
+        let preparedFields = {time : "10:00", sex : "male"};
         Object.keys(fields).forEach((item) => {
             preparedFields[item] = fields[item].value
         });
