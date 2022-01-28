@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import Step from "./Stepper";
-import FirstStepForm from "./FirstStepForm";
+/*import FirstStepForm from "./FirstStepForm";*/
+import FirstVForm from "./FirstVForm";
 import SecondStepForm from "./SecondStepForm";
 import ThirdStepForm from "./ThirdStepForm";
 import axios from "axios";
+import icon404 from "../../../public/static/images/404.png";
 
 export default class TestServicePage extends Component {
 
@@ -70,13 +72,15 @@ export default class TestServicePage extends Component {
         return (
             <div className="">
                 <Step activeStepNumber={this.state.activeStep}/>
-                {activeStep === 0 ?
-                    <FirstStepForm
-                        changeStepNext={this.changeStepNext}
+                     {activeStep === 0 ?
+                    < FirstVForm
+
+                        /*FirstStepForm*/
+                       changeStepNext={this.changeStepNext}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}
                         fields={this.state.fields}
-                    />
+                         />
                     : null}
 
                 {activeStep === 1 ?
