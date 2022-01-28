@@ -42,7 +42,7 @@ export default class FirstVForm extends Component {
                             name="age"
                             placeholder="Возраст"
                             onChange={this.props.handleChange}
-                            value={fields.age ? fields.age.value : undefined}
+                            value={fields.age ? fields.age.value:undefined }
                         />
                     </div>
 

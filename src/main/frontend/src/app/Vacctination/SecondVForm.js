@@ -11,13 +11,35 @@ export default class SecondVForm extends Component {
 
                     <div className="two fields">
                         <div className="field">
-                            <label>ФИО ветеринара</label>
+                            <label>Вакцина</label>
                             <input
                                 type="text"
-                                name="doctorName"
-                                placeholder="ФИО ветеринара"
+                                name="vacctina"
+                                placeholder="Вакцина"
                                 onChange={this.props.handleChange}
-                                value={fields.doctorName ? fields.doctorName.value : undefined}
+                                value={fields.vacctina ? fields.vacctina.value : undefined}
+                            />
+                        </div>
+                        <div className="field">
+                            <label>Клиника</label>
+                            <input
+                                type="text"
+                                name="Klinika"
+                                placeholder="Клиника"
+                                onChange={this.props.handleChange}
+                                value={fields.Klinika ? fields.Klinika.value : undefined}
+                            />
+                        </div>
+                    </div>
+                    <div className="two fields">
+                        <div className="field">
+                            <label>Дата приема</label>
+                            <input
+                                type="date"
+                                name="Date_pr"
+                                placeholder="Дата приема"
+                                onChange={this.props.handleChange}
+                                value={fields.Date_pr ? fields.Date_pr.value:undefined }
                             />
                         </div>
                         <div className="field">
