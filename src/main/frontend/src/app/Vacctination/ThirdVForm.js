@@ -6,13 +6,14 @@ export default class ThirdVForm extends Component {
         const {fields} = this.props;
 
         return (
-            <div>
-                <h4 className="ui dividing header">Подтверждение заявки</h4>
-                <table className="ui celled table">
+            <div Align="center">
+                <h3 className="ui dividing header" >Подтверждение заявки</h3>
+                <table className="ui celled table"  style={{width:400|400}} >
                     <tbody>
 
-                    {Object.values(fields).map((item) =>
-                        <tr key={item.label + item.value}>
+                    {
+                        Object.values(fields).map((item) =>
+                        <tr Align="center" key={item.label + item.value}>
                             <td>{item.label}</td>
                             <td>{item.value}</td>
                         </tr>
@@ -20,6 +21,7 @@ export default class ThirdVForm extends Component {
 
                     </tbody>
                 </table>
+
                 <button
                     className="ui button primary right floated"
                     onClick={this.props.submitForm}
@@ -32,6 +34,7 @@ export default class ThirdVForm extends Component {
                 >
                     <i aria-hidden="true" className="left arrow icon"></i>Назад
                 </button>
+
             </div>
 
         )
