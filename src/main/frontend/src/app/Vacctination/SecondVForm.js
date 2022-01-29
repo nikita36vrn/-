@@ -5,7 +5,7 @@ export default class SecondVForm extends Component {
 
 
     render() {
-        // var date = new Date();
+
         const {fields} = this.props;
         return (
 
@@ -13,19 +13,19 @@ export default class SecondVForm extends Component {
                 <div className="ui form" Align="center" >
                     <h3 className="ui dividing header" >Информация о записи</h3>
 
-                    <div className="field">
+
                         <div className="field">
                             <label>Вакцина</label>
                             <select
                                 type="text"
                                 name="vacctina"
-                                placeholder="Вакцина"
+                                title="Вакцина"
                                 onChange={this.props.handleChange}
                                 value={fields.vacctina ? fields.vacctina.value : undefined}
                                 style={{width: 500}}
                             >
                                 <option value=""></option>
-                                {/*<option value="проб"> </option>*/}
+
                             <option value="Котоспутник">Котоспутник</option>
                             <option value="Котолайт">Котолайт</option>
                             <option value="Пришелиц_5">Пришелиц_5</option>
@@ -34,24 +34,24 @@ export default class SecondVForm extends Component {
                         </div>
 
                         <div className="field">
+
                             <label>Клиника</label>
                             <select
-                                type="text"
                                 name="Klinika"
-                                placeholder="Клиника"
+                                title="Клиника"
                                 onChange={this.props.handleChange}
                                 value={fields.Klinika ? fields.Klinika.value : undefined}
                                 style={{width: 500}}
                             >
-                                {/*<option value="проб"> </option>*/}
-                                <option value=""> </option>
-                            <option value="Котовасия">Котовасия ул.ПеревернулВазу 6</option>
+
+                                <option  value="" ></option>
+                    <option value="Котовасия">Котовасия ул.ПеревернулВазу 6</option>
                             <option value="СуперКот">СуперКот ул.Мяуразбужувсех 13</option>
                                 <option value="Тыгыдык">Тыгыдык ул.Миминишкина 2</option>
 
                          </select>
+
                         </div>
-                    </div>
 
                         <div className="field">
                             <label>Дата приема</label>
@@ -72,12 +72,13 @@ export default class SecondVForm extends Component {
                             <label>Время приема</label>
                             <select
                                 name="time"
+                                title="Время приема"
                                 onChange={this.props.handleChange}
-                                placeholder="Время приема"
                                 value={fields.time ? fields.time.value : undefined}
                                 style={{width: 500}}
+
                             >
-                                {/*<option value="проб"> </option>*/}
+
                                 <option value="проб"> </option>
                                 <option value="8:00">8:00</option>
                                 <option value="9:00">9:00</option>

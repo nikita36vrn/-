@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import InputMask from 'react-input-mask';
+
 
 export default class FirstVForm extends Component {
 
@@ -16,10 +16,10 @@ export default class FirstVForm extends Component {
                         <input
                             type="text"
                             name="name"
-
+                            placeholder="Кличка"
                             onChange={this.props.handleChange}
                             value={fields.name ? fields.name.value : undefined}
-                            placeholder="Кличка"
+
                             style={{width: 500}}
                         />
 
@@ -37,7 +37,7 @@ export default class FirstVForm extends Component {
                     </div>
 
                     <div className="field" >
-                        <label for="age">Возраст</label>
+                        <label >Возраст</label>
                         <input
                             type="number"
                             name="age"
@@ -47,6 +47,7 @@ export default class FirstVForm extends Component {
                             style={{width: 500}}
                             max={"25"}
                             min={"1"}
+
                         />
 
                     </div>
@@ -93,14 +94,14 @@ export default class FirstVForm extends Component {
 
                         type="text"
                         name="sex"
-                        placeholder="Пол"
+                        title='Пол'
                         onChange={this.props.handleChange}
                         value={fields.sex ? fields.sex.value : undefined}
                         style={{width: 500}}
                     >
                         <option value=""></option>
-                        <option value="male">Кот</option>
-                        <option value="female">Кошка</option>
+                        <option value="Кот">Кот</option>
+                        <option value="Кошка">Кошка</option>
 
 
                     </select>
