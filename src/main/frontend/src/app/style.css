@@ -54,3 +54,6 @@ main {
 .carousel-slider {
     border-radius: 4px;
 }
+input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+}

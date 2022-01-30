@@ -22,7 +22,7 @@ export default class ThirdVForm extends Component {
                     </tbody>
                 </table>
 
-                <button
+                {/*<button
                     className="ui button primary right floated"
                     onClick={this.props.submitForm}
                 >
@@ -33,7 +33,14 @@ export default class ThirdVForm extends Component {
                     onClick={this.props.changeStepPrev}
                 >
                     <i aria-hidden="true" className="left arrow icon"></i>Назад
-                </button>
+                </button>*/}
+                <div Align="center">
+
+                    <button className="ui icon left labeled button primary floated" onClick={this.props.changeStepPrev}>
+                        <i aria-hidden="true" className="left arrow icon"></i>Назад
+                    </button>
+                    <button className="ui button primary floated" onClick={this.props.submitForm}>Отправить</button>
+                </div>
 
             </div>
 
