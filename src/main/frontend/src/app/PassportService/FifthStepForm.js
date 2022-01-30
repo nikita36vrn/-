@@ -7,32 +7,42 @@ export default class FifthStepForm extends Component {
         return (
             <div>
                 <div className="ui form">
-                    <h4 className="ui dividing header">Выбор специалиста</h4>
+                    <h4 className="ui dividing header">Выбор способа оплаты государственной пошлины</h4>
 
-                    <div className="two fields">
+
                         <div className="field">
-                            <label>ФИО ветеринара</label>
-                            <input
-                                type="text"
-                                name="doctorName"
-                                placeholder="ФИО ветеринара"
-                                onChange={this.props.handleChange}
-                                value={fields.doctorName ? fields.doctorName.value : undefined}
-                            />
+                            <label>Выбор Способа оплаты</label>
+                            <div className="inline fields radioGroupTop">
+                                <div className="field">
+                                    <div className="ui radio checkbox">
+                                        <input
+                                            type="radio"
+                                            name="opl_pass"
+                                            onChange={this.props.handleChange}
+                                            // defaultChecked={true}
+                                            placeholder="Способ оплаты"
+                                            value='bez_nal'
+                                            checked={fields.opl_pass ? fields.opl_pass.value === 'Безналичный расчет' : true }
+                                        />
+                                        <label>Безналичный расчет</label>
+                                    </div>
+                                </div>
+                                <div className="field">
+                                    <div className="ui radio checkbox">
+                                        <input
+                                            type="radio"
+                                            name="opl_pass"
+                                            onChange={this.props.handleChange}
+                                            value={'nal'}
+                                            checked={fields.opl_pass ? fields.opl_pass.value === 'Наличные' : false }
+                                            placeholder="Способ оплаты"
+                                        />
+                                        <label>Наличный расчет</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="field">
-                            <label>Время приема</label>
-                            <select
-                                name="time"
-                                onChange={this.props.handleChange}
-                                title='Время приема'
-                                value={fields.time ? fields.time.value : undefined}
-                            >
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                            </select>
-                        </div>
-                    </div>
+
 
                     <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
                         Далее<i aria-hidden="true" className="right arrow icon"></i>

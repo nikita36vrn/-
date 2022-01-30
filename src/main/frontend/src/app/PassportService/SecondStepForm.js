@@ -7,30 +7,45 @@ export default class SecondStepForm extends Component {
         return (
             <div>
                 <div className="ui form">
-                    <h4 className="ui dividing header">Выбор специалиста</h4>
+                    <h4 className="ui dividing header">Адрес Вашего проживанния</h4>
 
                     <div className="two fields">
                         <div className="field">
-                            <label>ФИО ветеринара</label>
-                            <input
-                                type="text"
-                                name="doctorName"
-                                placeholder="ФИО ветеринара"
+                            <label>Страна</label>
+                            <select
+                                name="city_owner"
                                 onChange={this.props.handleChange}
-                                value={fields.doctorName ? fields.doctorName.value : undefined}
-                            />
+                                title='Город'
+                                value={fields.city_owner ? fields.city_owner.value : undefined}
+                            >
+                                <option value="Russia">Россия</option>
+                                <option value="Belarus">Беларусия</option>
+                                <option value="Ukraine">Украина</option>
+                                <option value="Kazakhstan">Казахстан</option>
+                            </select>
                         </div>
                         <div className="field">
-                            <label>Время приема</label>
-                            <select
-                                name="time"
+                            <label>Город</label>
+
+                            <input
+                                type="text"
+                                name="city_owner"
+                                placeholder="Город"
                                 onChange={this.props.handleChange}
-                                title='Время приема'
-                                value={fields.time ? fields.time.value : undefined}
-                            >
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                            </select>
+                                value={fields.city_owner ? fields.city_owner.value : undefined}
+                            />
+                        </div>
+                    </div>
+                    <div className="two fields">
+                        <div className="field">
+                            <label>Домашний адрес</label>
+                            <input
+                                type="text"
+                                name="adr_owner"
+                                placeholder="Улица, дом, квартира"
+                                onChange={this.props.handleChange}
+                                value={fields.adr_owner ? fields.adr_owner.value : undefined}
+                            />
                         </div>
                     </div>
 
