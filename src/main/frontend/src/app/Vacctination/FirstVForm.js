@@ -37,17 +37,12 @@ export default class FirstVForm extends Component {
                     <div className="field">
                         <label>Кличка </label>
                         <input
-                            id="name"
+                            // id="name"
                             type="text"
                             name="name"
-<<<<<<< HEAD
-                            required
-=======
                             placeholder="Кличка"
->>>>>>> f3e9cec9738ff1d56667fa323564916e4702fb6c
                             onChange={this.props.handleChange}
                             value={fields.name ? fields.name.value : undefined}
-
                             style={{width: 500}}
 
                         />
@@ -56,7 +51,7 @@ export default class FirstVForm extends Component {
                     <div className="field">
                         <label>Порода</label>
                         <input
-                            id="Breed"
+                            // id="Breed"
                             type="text"
                             name="Breed"
                             placeholder="Порода"
@@ -133,15 +128,15 @@ export default class FirstVForm extends Component {
                         style={{width: 500}}
                     >
                         <option value=""></option>
-<<<<<<< HEAD
-                        <option value="male">Кот</option>
-                        <option value="female">Кошка</option>
-=======
+
+                        {/*<option value="male">Кот</option>*/}
+                        {/*<option value="female">Кошка</option>*/}
+
                         <option value="Кот">Кот</option>
                         <option value="Кошка">Кошка</option>
 
 
->>>>>>> f3e9cec9738ff1d56667fa323564916e4702fb6c
+
                     </select>
                 </div>
 
