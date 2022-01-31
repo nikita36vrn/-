@@ -108,7 +108,7 @@ export default class FirstStepForm extends Component {
                     </div>
                 </div>
 
-                <h4 className="ui dividing header">Информация о Хозяине Контенка</h4>
+                <h4 className="ui dividing header">Информация о Хозяине Котенка</h4>
                 <div className="two fields">
                     <div className="field">
                         <label>ФИО Хозяина</label>
