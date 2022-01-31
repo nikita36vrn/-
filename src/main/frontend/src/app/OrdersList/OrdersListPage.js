@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from "axios";
 import {icons} from "../Catalog/constants";
 import {statusCode} from "./constrains"
-
 export default class OrdersListPage extends Component {
 
     state = {
@@ -39,6 +38,8 @@ export default class OrdersListPage extends Component {
 
     render() {
         const {orederList, serviceList} = this.state;
+        // const {fields} = this.props;
+
         return (
             <div>
                 <h4 className="ui dividing header">Список заявок</h4>
@@ -54,9 +55,9 @@ export default class OrdersListPage extends Component {
                                 <div className="meta"><span className="date">Статус: {this.getStatusName(item.status)}</span></div>
                                 {/*<div className="description">{JSON.stringify(item.fields)}</div>*/}
                                 {/*<div className="description" id={item.fields}></div>*/}
-                                {/*<script>*/}
-
-                                {/*</script>*/}
+                                <div className="description">
+                                    {/*<span>{fields.name.value} </span>*/}
+                                </div>
                             </div>
                         </div>}
                     )}
