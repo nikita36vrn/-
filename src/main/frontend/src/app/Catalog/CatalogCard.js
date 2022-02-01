@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import {icons} from "./constants";
+import axios from "axios";
 
 
 export default class CatalogCard extends Component {
+
+
 
     render() {
         const {service} = this.props;

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.praktika.kotouslugi.model.Requisition;
 import ru.praktika.kotouslugi.model.response.BaseResponse;
+import ru.praktika.kotouslugi.service.CatsService;
 import ru.praktika.kotouslugi.service.RequisitionService;
 
 import java.util.List;
@@ -18,6 +19,9 @@ public class RequisitionController extends BaseController {
 
     @Autowired
     private RequisitionService requisitionService;
+
+    @Autowired
+    private CatsService catsService;
 
     @RequestMapping(value = "listRequisition", method = RequestMethod.POST, produces = "application/json")
     public BaseResponse<List<Requisition>> listRequisition() {
@@ -32,5 +36,10 @@ public class RequisitionController extends BaseController {
     @RequestMapping(value = "updateRequisition", method = RequestMethod.POST, produces = "application/json")
     public BaseResponse<Boolean> updateRequisition(@RequestBody Map<String, Object> request) {
         return wrapper((s) -> requisitionService.updateRequisition(request));
+    }
+
+    @RequestMapping(value = "createCats", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse<Integer> createCats(@RequestBody Map<String, Object> request) {
+        return wrapper((s) -> catsService.createCats(request));
     }
 }

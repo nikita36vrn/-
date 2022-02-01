@@ -1,15 +1,70 @@
-import React, {Component} from 'react';
-import InputMask from 'react-input-mask';
+{/*import React, {Component} from 'react';
+import {Input} from 'semantic-ui-react'
+import axios from "axios";
 
-export default class FirstStepForm extends Component {
+export default class Step1 extends Component {
+
+    state = {
+        data: [],
+        filtered: []
+    };
+
+    componentDidMount() {
+        this.getData()
+    }
+
+    getData = () => {
+        axios.post('api/listCats').then(({data}) => {
+            this.setState({data: data.content, filtered: data.content})
+        })
+    };
 
     render() {
-
+        const {filtered} = this.state;
         const {fields} = this.props;
-
+        const {service} = this.props;
         return (
-
             <div className="ui form">
+                <div className="field">
+                    {/* <label>Имя</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Кличка"
+                        onChange={this.props.handleChange}
+                        value={fields.name ? fields.name.value : undefined}
+                    />
+                </div>
+                <div className="field">
+                    <label>Фотка</label>
+                    <input
+                        type="text"
+                        name="photo"
+                        placeholder="Фото"
+                        onChange={this.props.handleChange}
+                        value={fields.photo ? fields.photo.value : undefined}
+                    />
+                </div>
+                <div className="field">
+                    <label>Описание</label>
+                    <input
+                        type="text"
+                        name="desc"
+                        placeholder="Описание"
+                        onChange={this.props.handleChange}
+                        value={fields.desc ? fields.desc.value : undefined}
+                    />
+                </div>*/}
+{/* <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
+                    Далее<i aria-hidden="true" className="right arrow icon"></i>
+                </button>
+                {filtered.map(filtered =>
+                    <div>{filtered.name} {filtered.description} {filtered.sex}
+                    </div>)
+                }
+            </div>*/}
+
+                {/*   <div className="ui form">
                 <h4 className="ui dividing header">Персональная информация</h4>
 
                 <div className="two fields">
@@ -115,6 +170,51 @@ export default class FirstStepForm extends Component {
 
                     </div>
                 </div>
+                <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
+                    Далее<i aria-hidden="true" className="right arrow icon"></i>
+                </button>*/}
+          //  </div>
+     //   )
+   // }
+//}*/
+import React, {Component} from 'react';
+import {Input} from 'semantic-ui-react'
+import axios from "axios";
+
+export default class Step1 extends Component {
+
+    state = {
+        data: [],
+        filtered: []
+    };
+
+    componentDidMount() {
+// this.setState({services: listOfServices})
+        this.getData()
+    }
+
+    getData = () => {
+        axios.post('api/listCats').then(({data}) => {
+            this.setState({data: data.content, filtered: data.content})
+        })
+    };
+
+    render() {
+        const {filtered} = this.state;
+        const {fields} = this.props;
+        const {service} = this.props;
+        return (
+           <div className="ui form">
+                <center>{filtered.map(filtered =>
+                    <div>
+                        <h2>{filtered.name}</h2> {filtered.sex}
+                        <br />
+                        <img src = {filtered.image} alt ="Я кот" width="189" height = "255"/><br />
+                        <b>{filtered.description}</b>
+                        <br />
+                        <br />
+                    </div>
+                )}</center>
                 <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
                     Далее<i aria-hidden="true" className="right arrow icon"></i>
                 </button>

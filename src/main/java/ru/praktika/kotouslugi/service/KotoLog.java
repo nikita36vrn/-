@@ -2,32 +2,30 @@ package ru.praktika.kotouslugi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.praktika.kotouslugi.dao.CategoryRepository;
 import ru.praktika.kotouslugi.dao.KotoLogRepository;
-import ru.praktika.kotouslugi.dao.KotoServiceRepository;
+import ru.praktika.kotouslugi.model.Catalog;
 import ru.praktika.kotouslugi.model.Category;
-import ru.praktika.kotouslugi.model.KotoServiceEntity;
 import ru.praktika.kotouslugi.request.RequestId;
 
 import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class KotoService {
+public class KotoLog {
 
     @Autowired
-    private KotoServiceRepository kotoServiceRepository;
-    @Autowired
-    private CategoryRepository categoryRepository;
+    private KotoLogRepository kotoLogRepository;
+    //@Autowired
+    //private CategoryRepository categoryRepository;
 
     /**
      * Получение списка всех сервисов
      *
      * @return - список сервисов
      */
-    public List<KotoServiceEntity> listServices() {
-        List<KotoServiceEntity> entityList = new LinkedList<>();
-        Iterable<KotoServiceEntity> serviceEntities = kotoServiceRepository.findAll();
+    public List<Catalog> listServices() {
+        List<Catalog> entityList = new LinkedList<>();
+        Iterable<Catalog> serviceEntities = kotoLogRepository.findAll();
         serviceEntities.forEach(entityList::add);
         return entityList;
     }
@@ -38,9 +36,9 @@ public class KotoService {
      * @param request - запрос с id сервиса
      * @return искомый сервис
      */
-    public KotoServiceEntity getServiceById(RequestId request) {
-        KotoServiceEntity result = null;
-        KotoServiceEntity serviceEntity = kotoServiceRepository.findByServiceId(request.getId());
+    public Catalog getServiceById(RequestId request) {
+        Catalog result = null;
+        Catalog serviceEntity = kotoLogRepository.findByServiceId(request.getId());
         if (serviceEntity != null)
             result = serviceEntity;
         return result;
@@ -50,11 +48,11 @@ public class KotoService {
      * получение списка категорий
      *
      * @return список категорий
-     */
+
     public List<Category> listCategories() {
         List<Category> result = new LinkedList<>();
         Iterable<Category> categories = categoryRepository.findAll();
         categories.forEach(result::add);
         return result;
-    }
+    }*/
 }

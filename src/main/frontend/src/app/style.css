@@ -54,3 +54,37 @@ main {
 .carousel-slider {
     border-radius: 4px;
 }
+.intro{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-left:50px;
+    height: 750px;
+    padding-top: 200px;
+
+    background-size: cover;
+}
+.intro_element{
+    width: 160px;
+    height: 240px;
+    position: relative;
+    padding-left: 50px;
+    opacity: 0;
+
+}
+.img_auth{
+    position: absolute;
+    left: 50px;
+    z-index: 1;
+}
+.img_content{
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    transition: opacity .2s linear;
+    color: #fff;
+    font-size: 10px;
+    overflow:hidden;
+}

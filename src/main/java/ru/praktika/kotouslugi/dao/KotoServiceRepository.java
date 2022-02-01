@@ -10,3 +10,5 @@ public interface KotoServiceRepository extends CrudRepository<KotoServiceEntity,
     @Query("from KotoServiceEntity kse where kse.id = :id")
     KotoServiceEntity findByServiceId(@Param("id") Integer id);
 }
+
+
