@@ -54,3 +54,37 @@ INSERT INTO service_category
 values (5, 3);
 INSERT INTO service_category
 values (6, 1);
+
+CREATE TABLE otdels (
+                    id_otdel INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    name_otdel VARCHAR(50),
+                    city_otdel VARCHAR(20),
+                    city_id VARCHAR(10),
+                    adr_otdel VARCHAR(20),
+                    phone_otdel VARCHAR(20),
+
+);
+
+-- otdels
+INSERT INTO otdels
+values (1, 'Ветеринарная клиника № 3', 'Воронеж', 1, 'ул. Ленина д.45', '+(951)456-90-90');
+INSERT INTO otdels
+values (2, 'Ветеринарная клиника № 1', 'Воронеж', 1, 'ул. Революции д.92', '+7(951)456-75-28');
+INSERT INTO otdels
+values (3, 'Ветеринарная клиника № 5432', 'Москва', 2, 'ул. Большевиков д.45', '+7(951)456-90-90');
+INSERT INTO otdels
+values (4, 'Ветеринарная клиника № 2', 'Воронеж', 1, 'ул. Хользунова д.22', '+7(951)321-14-87');
+INSERT INTO otdels
+values (5, 'Ветеринарная клиника № 3', 'Москва', 2, 'ул. Арбат д.15', '+7(951)111-11-11');
+
+CREATE TABLE cities_ot (
+                        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                        name VARCHAR(50),
+);
+
+INSERT INTO cities_ot
+values (1,'Воронеж');
+INSERT INTO cities_ot
+values (2,'Москва');
+INSERT INTO cities_ot
+values (3,'Санкт-Петербург');

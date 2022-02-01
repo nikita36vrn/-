@@ -4,6 +4,36 @@ export default class SecondStepForm extends Component {
 
     render() {
         const {fields} = this.props;
+
+        function check_fl() {
+
+            if (fields.country_owner) {
+                if (fields.country_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.city_owner) {
+                if (fields.city_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.adr_owner) {
+                if (fields.adr_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            return false
+        }
+
         return (
             <div>
                 <div className="ui form">
@@ -13,11 +43,12 @@ export default class SecondStepForm extends Component {
                         <div className="field">
                             <label>Страна</label>
                             <select
-                                name="city_owner"
+                                name="country_owner"
                                 onChange={this.props.handleChange}
-                                title='Город'
-                                value={fields.city_owner ? fields.city_owner.value : undefined}
+                                title='Страна'
+                                value={fields.country_owner ? fields.country_owner.value : undefined}
                             >
+                                <option selected disabled>Выберите страну</option>
                                 <option value="Russia">Россия</option>
                                 <option value="Belarus">Беларусия</option>
                                 <option value="Ukraine">Украина</option>
@@ -49,7 +80,7 @@ export default class SecondStepForm extends Component {
                         </div>
                     </div>
 
-                    <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
+                    <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext} disabled={check_fl()}>
                         Далее<i aria-hidden="true" className="right arrow icon"></i>
                     </button>
                     <button className="ui icon left labeled button primary left floated" onClick={this.props.changeStepPrev}>

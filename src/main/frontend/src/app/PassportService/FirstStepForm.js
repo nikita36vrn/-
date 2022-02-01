@@ -1,11 +1,91 @@
 import React, {Component} from 'react';
 import InputMask from 'react-input-mask';
 
+
 export default class FirstStepForm extends Component {
 
     render() {
 
         const {fields} = this.props;
+
+
+        function check_fl() {
+
+            if (fields.fio_kot) {
+                if (fields.fio_kot.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.por_kot) {
+                if (fields.por_kot.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.date_kot) {
+                if (fields.date_kot.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.fio_rod) {
+                if (fields.fio_rod.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.pass_rod) {
+                if (fields.pass_rod.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.fio_owner) {
+                if (fields.fio_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.phone_owner) {
+                if (fields.phone_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.pass_s_owner) {
+                if (fields.pass_s_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.pass_n_owner) {
+                if (fields.pass_n_owner.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            return false
+        }
+
 
         return (
             <div className="ui form">
@@ -20,6 +100,7 @@ export default class FirstStepForm extends Component {
                             placeholder="Кличка"
                             onChange={this.props.handleChange}
                             value={fields.fio_kot ? fields.fio_kot.value : undefined}
+                            required
                         />
                     </div>
                     <div className="field">
@@ -30,6 +111,7 @@ export default class FirstStepForm extends Component {
                             placeholder="Порода котика"
                             onChange={this.props.handleChange}
                             value={fields.por_kot ? fields.por_kot.value : undefined}
+                            required
                         />
                     </div>
                 </div>
@@ -43,9 +125,9 @@ export default class FirstStepForm extends Component {
                             placeholder="Дата рождения Котика"
                             onChange={this.props.handleChange}
                             value={fields.date_kot ? fields.date_kot.value : undefined}
+                            required
                         />
                     </div>
-
                     <div className="field">
                         <label>Пол</label>
                         <div className="inline fields radioGroupTop">
@@ -59,6 +141,7 @@ export default class FirstStepForm extends Component {
                                         placeholder="Пол"
                                         value='male'
                                         checked={fields.sex_kot ? fields.sex_kot.value === 'male' : true }
+                                        required
                                     />
                                     <label>Кот</label>
                                 </div>
@@ -72,6 +155,7 @@ export default class FirstStepForm extends Component {
                                         value={'female'}
                                         checked={fields.sex_kot ? fields.sex_kot.value === 'female' : false }
                                         placeholder="Пол"
+                                        required
                                     />
                                     <label>Кошка</label>
                                 </div>
@@ -89,6 +173,7 @@ export default class FirstStepForm extends Component {
                             placeholder="Кличка одного из Родителей"
                             onChange={this.props.handleChange}
                             value={fields.fio_rod ? fields.fio_rod.value : undefined}
+                            required
                         />
                     </div>
                     <div className="field">
@@ -102,6 +187,7 @@ export default class FirstStepForm extends Component {
                                     type="text"
                                     name="pass_rod"
                                     placeholder="Номер паспорта"
+                                    required
                                 />
                             }
                         </InputMask>
@@ -118,6 +204,7 @@ export default class FirstStepForm extends Component {
                             placeholder="ФИО Хозяина"
                             onChange={this.props.handleChange}
                             value={fields.fio_owner ? fields.fio_owner.value : undefined}
+                            required
                         />
                     </div>
                     <div className="field">
@@ -131,6 +218,7 @@ export default class FirstStepForm extends Component {
                                 type="text"
                                 name="phone_owner"
                                 placeholder="Телефон"
+                                required
                             />
                             }
                         </InputMask>
@@ -150,6 +238,7 @@ export default class FirstStepForm extends Component {
                                 type="text"
                                 name="pass_s_owner"
                                 placeholder="Серия паспорта"
+                                required
                             />
                         }
                     </InputMask>
@@ -165,14 +254,14 @@ export default class FirstStepForm extends Component {
                                     type="text"
                                     name="pass_n_owner"
                                     placeholder="Номер паспорта"
+                                    required
                                 />
                             }
                         </InputMask>
                     </div>
-
                 </div>
 
-                <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
+                <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext} disabled={check_fl()}>
                     Далее<i aria-hidden="true" className="right arrow icon"></i>
                 </button>
             </div>

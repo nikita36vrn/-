@@ -21,8 +21,8 @@ export default class FifthStepForm extends Component {
                                             onChange={this.props.handleChange}
                                             // defaultChecked={true}
                                             placeholder="Способ оплаты"
-                                            value='bez_nal'
-                                            checked={fields.opl_pass ? fields.opl_pass.value === 'Безналичный расчет' : true }
+                                            value='Безналичные'
+
                                         />
                                         <label>Безналичный расчет</label>
                                     </div>
@@ -33,8 +33,8 @@ export default class FifthStepForm extends Component {
                                             type="radio"
                                             name="opl_pass"
                                             onChange={this.props.handleChange}
-                                            value={'nal'}
-                                            checked={fields.opl_pass ? fields.opl_pass.value === 'Наличные' : false }
+                                            value={'Наличные'}
+
                                             placeholder="Способ оплаты"
                                         />
                                         <label>Наличный расчет</label>

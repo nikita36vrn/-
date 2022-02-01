@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.praktika.kotouslugi.dao.CategoryRepository;
 import ru.praktika.kotouslugi.dao.KotoServiceRepository;
+
 import ru.praktika.kotouslugi.model.Category;
 import ru.praktika.kotouslugi.model.KotoServiceEntity;
 import ru.praktika.kotouslugi.request.RequestId;
@@ -18,6 +19,7 @@ public class KotoService {
     private KotoServiceRepository kotoServiceRepository;
     @Autowired
     private CategoryRepository categoryRepository;
+
 
     /**
      * Получение списка всех сервисов
@@ -44,6 +46,7 @@ public class KotoService {
             result = serviceEntity;
         return result;
     }
+
 
     /**
      * получение списка категорий

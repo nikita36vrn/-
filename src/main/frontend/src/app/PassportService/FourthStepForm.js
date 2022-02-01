@@ -3,7 +3,30 @@ import React, {Component} from 'react';
 export default class FourthStepForm extends Component {
 
     render() {
+
         const {fields} = this.props;
+
+        function check_fl() {
+
+            if (fields.visit_date) {
+                if (fields.visit_date.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            if (fields.visit_time) {
+                if (fields.visit_time.value === "") {
+                    return true
+                }
+            } else {
+                return true
+            }
+
+            return false
+        }
+
         return (
             <div>
                 <div className="ui form">
@@ -28,6 +51,7 @@ export default class FourthStepForm extends Component {
                                 title='Время посещения'
                                 value={fields.visit_time ? fields.visit_time.value : undefined}
                             >
+                                <option selected disabled>Выберите время</option>
                                 <option value="9:00">9:00</option>
                                 <option value="9:30">9:30</option>
                                 <option value="10:00">10:00</option>
@@ -43,7 +67,7 @@ export default class FourthStepForm extends Component {
                         </div>
                     </div>
 
-                    <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
+                    <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext} disabled={check_fl()}>
                         Далее<i aria-hidden="true" className="right arrow icon"></i>
                     </button>
                     <button className="ui icon left labeled button primary left floated" onClick={this.props.changeStepPrev}>
