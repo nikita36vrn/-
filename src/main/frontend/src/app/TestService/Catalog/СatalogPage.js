@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Input} from 'semantic-ui-react'
 import axios from "axios";
-import loader from "../../../public/static/images/loader.gif"
+import loader from "../../../../public/static/images/loader.gif"
 import CatalogCard from "./CatalogCard";
-import CarouselPage from "../Carousel/Carousel";
+import CarouselPage from "../../Carousel/Carousel";
 
 export default class CatalogPage extends Component {
 

@@ -1,24 +1,18 @@
+
 import React, {Component} from 'react';
 import Step from "./Stepper";
 import FirstStepForm from "./FirstStepForm";
-import SecondStepForm from "./SecondStepForm";
 import ThirdStepForm from "./ThirdStepForm";
 import axios from "axios";
 
-export default class TestServicePage extends Component {
+export default class TestServicePage_2 extends Component {
 
     state = {
         activeStep: 0,
-        numberOfSteps: 3,
-        fields: {}
+        numberOfSteps: 2,
+        registrations: {}
     };
 
-    componentDidMount() {
-
-        axios.post('/api/getServiceById',{id:1}).then(({data}) => {
-            this.props.changeBreadcrumbLabel(data.content.name)
-        })
-    }
 
     changeStepNext = () => {
         let {activeStep, numberOfSteps} = this.state;
@@ -37,17 +31,17 @@ export default class TestServicePage extends Component {
     };
 
     submitForm = () => {
-        const {fields} = this.state;
+        const {registrations} = this.state;
         let params = {};
         let preparedFields = {};
-        Object.keys(fields).forEach((item) => {
-            preparedFields[item] = fields[item].value
+        Object.keys(registrations).forEach((item) => {
+            preparedFields[item] = registrations[item].value
         });
-        params.name = 'Название услуги';
+
+        params.registrations = 1;
         params.fields = preparedFields;
-        params.status = "ACCEPTED";
-        params.serviceId=1;
-        axios.post('api/requisition/createRequisition', params).then(() => {
+        params.registrations=1;
+        axios.post('api/cat_registration/createRegistration', params).then(() => {
             alert("Заявка успешно подана");
             window.location.assign('/')
         }).catch((e)=> {
@@ -55,14 +49,14 @@ export default class TestServicePage extends Component {
     };
 
     handleChange = (e) => {
-        let {fields} = this.state;
-        const result = Object.assign({}, fields, {
+        let {registrations} = this.state;
+        const result = Object.assign({}, registrations, {
             [e.target.name]: {
                 value: e.target.value,
                 label: e.target.placeholder || e.target.title
             }
         });
-        this.setState({fields: result});
+        this.setState({registrations: result});
     };
 
     render() {
@@ -75,25 +69,16 @@ export default class TestServicePage extends Component {
                         changeStepNext={this.changeStepNext}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}
-                        fields={this.state.fields}
+                        registrations={this.state.registrations}
                     />
                     : null}
 
                 {activeStep === 1 ?
-                    <SecondStepForm
-                        changeStepNext={this.changeStepNext}
-                        handleChange={this.handleChange}
-                        changeStepPrev={this.changeStepPrev}
-                        fields={this.state.fields}
-                    />
-                    : null}
-
-                {activeStep === 2 ?
                     <ThirdStepForm
                         submitForm={this.submitForm}
                         handleChange={this.handleChange}
                         changeStepPrev={this.changeStepPrev}
-                        fields={this.state.fields}
+                        registrations={this.state.registrations}
                     /> : null}
 
             </div>

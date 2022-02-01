@@ -19,6 +19,7 @@ public class KotoService {
     @Autowired
     private CategoryRepository categoryRepository;
 
+
     /**
      * Получение списка всех сервисов
      *
@@ -56,4 +57,5 @@ public class KotoService {
         categories.forEach(result::add);
         return result;
     }
+
 }

@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import ru.praktika.kotouslugi.exception.ServiceException;
 import ru.praktika.kotouslugi.model.KotoError;
 import ru.praktika.kotouslugi.model.enums.ErrorCode;
-import ru.praktika.kotouslugi.model.response.BaseResponse;
+import ru.praktika.kotouslugi.model.enums.response.BaseResponse;
 import ru.praktika.kotouslugi.util.FunctionSE;
 
 public class BaseController {

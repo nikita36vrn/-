@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.praktika.kotouslugi.exception.ServiceException;
 import ru.praktika.kotouslugi.model.Category;
+import ru.praktika.kotouslugi.model.CatRegistration;
 import ru.praktika.kotouslugi.model.KotoServiceEntity;
-import ru.praktika.kotouslugi.model.response.BaseResponse;
+import ru.praktika.kotouslugi.model.enums.response.BaseResponse;
 import ru.praktika.kotouslugi.request.RequestId;
 import ru.praktika.kotouslugi.service.KotoService;
 
@@ -47,4 +48,6 @@ public class ProductServiceController extends BaseController {
     public BaseResponse<List<Category>> listCategories() {
         return wrapper((s) -> kotoService.listCategories());
     }
+
+
 }

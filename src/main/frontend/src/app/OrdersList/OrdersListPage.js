@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import {icons} from "../Catalog/constants";
+import {icons} from "../TestService/Catalog/constants";
 import {statusCode} from "./constrains"
 
 export default class OrdersListPage extends Component {
@@ -17,7 +17,9 @@ export default class OrdersListPage extends Component {
 
     getOrederList=()=>{
         axios.post('/api/requisition/listRequisition').then(({data}) => {
-            this.setState({orederList: data.content})
+            this.setState({orederList: data.content}) })
+            axios.post('/api/cat_registration/listRegistration').then(({data}) => {
+                this.setState({orederList: data.content})
         })
     };
 

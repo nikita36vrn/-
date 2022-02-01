@@ -1,4 +1,4 @@
-package ru.praktika.kotouslugi.model.response;
+package ru.praktika.kotouslugi.model.enums.response;
 
 import ru.praktika.kotouslugi.model.KotoError;
 import ru.praktika.kotouslugi.model.enums.ErrorCode;

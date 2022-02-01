@@ -5,7 +5,7 @@ export default class FirstStepForm extends Component {
 
     render() {
 
-        const {fields} = this.props;
+        const {registrations} = this.props;
 
         return (
             <div className="ui form">
@@ -16,20 +16,20 @@ export default class FirstStepForm extends Component {
                         <label>Кличка</label>
                         <input
                             type="text"
-                            name="name"
+                            name="a_name_cat"
                             placeholder="Кличка"
                             onChange={this.props.handleChange}
-                            value={fields.name ? fields.name.value : undefined}
+                            value={registrations.a_name_cat ? registrations.a_name_cat.value : undefined}
                         />
-                    </div>
+                    </div>s
                     <div className="field">
                         <label>Название породы</label>
                         <input
                             type="text"
-                            name="lastName"
-                            placeholder="Название пидора"
+                            name="b_poroda"
+                            placeholder="Название породы"
                             onChange={this.props.handleChange}
-                            value={fields.lastName ? fields.lastName.value : undefined}
+                            value={registrations.b_poroda ? registrations.b_poroda.value : undefined}
                         />
                     </div>
                 </div>
@@ -39,12 +39,12 @@ export default class FirstStepForm extends Component {
                         <label>Возраст</label>
                         <InputMask
                             mask="*"
-                            value={fields.age ? fields.age.value : undefined}
+                            value={registrations.c_age ? registrations.c_age.value : undefined}
                             onChange={this.props.handleChange}>
                             {() =>
                                 <input
                                     type="text"
-                                    name="age"
+                                    name="c_age"
                                     placeholder="Возраст"
                                 />
                             }
@@ -52,73 +52,40 @@ export default class FirstStepForm extends Component {
                     </div>
 
                     <div className="field">
-                        <label>Пол</label>
+                        <label>Сертификат прививок</label>
                         <div className="inline fields radioGroupTop">
                             <div className="field">
                                 <div className="ui radio checkbox">
                                     <input
                                         type="radio"
-                                        name="sex"
+                                        name="d_mc"
                                         onChange={this.props.handleChange}
                                         // defaultChecked={true}
-                                        placeholder="Пол"
-                                        value='male'
-                                        checked={fields.sex ? fields.sex.value === 'male' : true }
+                                        placeholder="mc"
+                                        value={'yes'}
+                                        checked={registrations.d_mc ? registrations.d_mc.value === 'yes' : true }
                                     />
-                                    <label>Кот</label>
+                                    <label>Сертификат есть</label>
                                 </div>
                             </div>
                             <div className="field">
                                 <div className="ui radio checkbox">
                                     <input
                                         type="radio"
-                                        name="sex"
+                                        name="d_mc"
                                         onChange={this.props.handleChange}
-                                        value={'female'}
-                                        checked={fields.sex ? fields.sex.value === 'female' : false }
+                                        value={'no'}
+                                        checked={registrations.d_mc ? registrations.d_mc.value === 'no' : false }
                                         placeholder="Пол"
                                     />
-                                    <label>Кошка</label>
+                                    <label>Сертификата нет</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <h4 className="ui dividing header">Информация для связи</h4>
-                <div className="two fields">
-                    <div className="field">
-                        <label>Почта</label>
-                        <InputMask
-                            mask="*******@****.**"
-                            value={fields.email ? fields.email.value : undefined}
-                            onChange={this.props.handleChange}>
-                            {() =>
-                                <input
-                                    type="text"
-                                    name="email"
-                                    placeholder="Почта"
-                                />
-                            }
-                        </InputMask>
-                    </div>
-                    <div className="field">
-                        <label>Телефон</label>
-                        <InputMask
-                            mask="+7(999)999 99 99"
-                            value={fields.phone ? fields.phone.value : undefined}
-                            onChange={this.props.handleChange}>
-                            {() =>
-                                <input
-                                type="text"
-                                name="phone"
-                                placeholder="Телефон"
-                            />
-                            }
-                        </InputMask>
 
-                    </div>
-                </div>
                 <button className="ui icon right labeled button primary right floated" onClick={this.props.changeStepNext}>
                     Далее<i aria-hidden="true" className="right arrow icon"></i>
                 </button>

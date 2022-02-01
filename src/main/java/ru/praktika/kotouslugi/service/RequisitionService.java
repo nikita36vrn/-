@@ -3,8 +3,10 @@ package ru.praktika.kotouslugi.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.praktika.kotouslugi.dao.RequisitionRepository;
+import ru.praktika.kotouslugi.dao.RegistrationRepository;
 import ru.praktika.kotouslugi.exception.ServiceException;
 import ru.praktika.kotouslugi.model.Field;
+import ru.praktika.kotouslugi.model.CatRegistration;
 import ru.praktika.kotouslugi.model.Requisition;
 import ru.praktika.kotouslugi.model.enums.RequisitionStatus;
 
@@ -25,9 +27,11 @@ public class RequisitionService {
         return result;
     }
 
-    public int createRequisition(Map<String, Object> request) {
 
-        Requisition requisition = new Requisition("Заявление", RequisitionStatus.DRAFT, 1);
+    public int createRequisition(Map<String, Object> request) {
+        Integer serviceId = (Integer) request.get("serviceId");
+        String name = (String) request.get("name");
+        Requisition requisition = new Requisition(name, RequisitionStatus.DRAFT, serviceId);
         request.forEach((s, o) -> {
             switch (s) {
                 case "name":

@@ -22,7 +22,6 @@ public class Requisition implements Serializable {
     public Requisition() {
     }
 
-
     public Requisition(String name, RequisitionStatus status,Integer serviceId) {
         this.name = name;
         this.status = status;

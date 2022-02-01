@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import ru.praktika.kotouslugi.model.Requisition;
-import ru.praktika.kotouslugi.model.response.BaseResponse;
+import ru.praktika.kotouslugi.model.enums.response.BaseResponse;
 import ru.praktika.kotouslugi.service.RequisitionService;
 
 import java.util.List;
@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/requisition")
+
 public class RequisitionController extends BaseController {
 
     @Autowired
@@ -33,4 +34,5 @@ public class RequisitionController extends BaseController {
     public BaseResponse<Boolean> updateRequisition(@RequestBody Map<String, Object> request) {
         return wrapper((s) -> requisitionService.updateRequisition(request));
     }
+
 }
