@@ -16,7 +16,7 @@ export default class TestServicePage extends Component {
 
     componentDidMount() {
 
-        axios.post('/api/getServiceById',{id:1}).then(({data}) => {
+        axios.post('/api/getServiceById',{id:7}).then(({data}) => {
             this.props.changeBreadcrumbLabel(data.content.name)
         })
     }
