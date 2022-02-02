@@ -53,13 +53,13 @@ export default class OrdersListPage extends Component {
                                 </div>
                                 <div className="header">{serviceName ? serviceName.name : ''}</div>
                                 <div className="meta"><span className="date">Статус: {this.getStatusName(item.status)}</span></div>
-                                {/*<div className="description">{JSON.stringify(item.fields)}</div>*/}
+                                <div className="description">{JSON.stringify(item.fields)}</div>
                                 {/*<div className="description" id={item.fields}></div>*/}
-                                <div className="description">
-                                    {/*<span>{fields.name.value} </span>*/}
+                                {/* <div className="description">
+                                    <span>{fields.name.value} </span>*/}
                                 </div>
                             </div>
-                        </div>}
+                        }
                     )}
                 </div>
             </div>
