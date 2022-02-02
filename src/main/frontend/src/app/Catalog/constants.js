@@ -6,6 +6,7 @@ import catIcon5 from "../../../public/static/images/icons/cat_grumpy.png"
 import catIcon6 from "../../../public/static/images/icons/cat_poo.png"
 import catIcon7 from "../../../public/static/images/icons/cat_purr.png"
 import catIcon8 from "../../../public/static/images/icons/cat_drunk.png"
+import catIcon9 from "../../../public/static/images/icons/cat_illness.jpg"
 
 // export const listOfServices = [
 //     {
@@ -48,5 +49,6 @@ export const icons = [
     catIcon5,
     catIcon6,
     catIcon7,
-    catIcon8
+    catIcon8,
+    catIcon9
 ];

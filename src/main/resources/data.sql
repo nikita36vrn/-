@@ -31,6 +31,10 @@ INSERT INTO service
 values (7,
         'Предотврати болезнь котика. Запиши его на вакцинацию!',
         'Вакцинация');
+INSERT INTO service
+values (8,
+        'Не можете отнести своего котика в ветеринарную клинику? Вызовите ветеринара на дом',
+        'Запись на вызов ветеринара');
 
 
 -- category
@@ -60,6 +64,8 @@ INSERT INTO service_category
 values (6, 1);
 INSERT INTO service_category
 values (7, 1);
+INSERT INTO service_category
+values (8, 1);
 
 CREATE TABLE otdels (
                     id_otdel INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -68,7 +74,6 @@ CREATE TABLE otdels (
                     city_id VARCHAR(10),
                     adr_otdel VARCHAR(20),
                     phone_otdel VARCHAR(20),
-
 );
 
 -- otdels

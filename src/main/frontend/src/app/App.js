@@ -13,6 +13,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import OrdersListPage from "./OrdersList/OrdersListPage";
 import TestV from "./Vacctination/FormPageV";
 import PassportServicePage from "./PassportService/FormPage";
+import VetCallServicePage from "./VetCallService/VetCallFormPage";
 
 class App extends Component {
 
@@ -40,6 +41,7 @@ class App extends Component {
                             <Route path="/0" exact render={() => (<TestV changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/6" exact render={() => (<PassportServicePage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/7" exact render={() => (<TestV changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
+                            <Route path="/8" exact render={() => (<VetCallServicePage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/orders" exact render={() => (<OrdersListPage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
 
                             <Route component={Page404}/>
