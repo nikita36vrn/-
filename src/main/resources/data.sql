@@ -1,8 +1,8 @@
 -- service
 INSERT INTO service
 values (0,
-        'Предотврати болезнь котика. Запиши его на вакцинацию!',
-        'Вакцинация');
+        'При рождении трех и более котят вы можете получить субсидии в виде пачки корма.',
+        'Регистрация рождения котят!');
 INSERT INTO service
 values (1,
         'Подходи ответственно к здоровью питомца. Здоровый кот - мало хлопот.',
@@ -27,11 +27,15 @@ INSERT INTO service
 values (6,
         'Еще нет ветеринарного паспорта? Тогда создайте заявку на получение прямо сейчас!',
         'Получение ветеринарного паспорта');
+INSERT INTO service
+values (7,
+        'Предотврати болезнь котика. Запиши его на вакцинацию!',
+        'Вакцинация');
 
 
 -- category
 INSERT INTO category
-values (0, 'Медицина');
+values (0, 'Семья и дети');
 INSERT INTO category
 values (1, 'Медицина');
 INSERT INTO category
@@ -54,6 +58,8 @@ INSERT INTO service_category
 values (5, 3);
 INSERT INTO service_category
 values (6, 1);
+INSERT INTO service_category
+values (7, 1);
 
 CREATE TABLE otdels (
                     id_otdel INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

@@ -39,6 +39,7 @@ class App extends Component {
                             <Route path="/1" exact render={() => (<TestServicePage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/0" exact render={() => (<TestV changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/6" exact render={() => (<PassportServicePage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
+                            <Route path="/7" exact render={() => (<TestV changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
                             <Route path="/orders" exact render={() => (<OrdersListPage changeBreadcrumbLabel={this.changeBreadcrumbLabel}/>)}/>
 
                             <Route component={Page404}/>

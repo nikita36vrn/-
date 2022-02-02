@@ -16,7 +16,7 @@ export default class TestV extends Component {
 
     componentDidMount() {
 
-        axios.post('/api/getServiceById', {id: 0}).then(({data}) => {
+        axios.post('/api/getServiceById', {id: 6}).then(({data}) => {
             this.props.changeBreadcrumbLabel(data.content.name)
         })
     }
@@ -47,7 +47,7 @@ export default class TestV extends Component {
         params.name = 'Название услуги';
         params.fields = preparedFields;
         params.status = "ACCEPTED";//RequisitionStatus там более подробно
-        params.serviceId = 0;
+        params.serviceId = 6;
         axios.post('api/requisition/createRequisition', params).then(() => {
             alert("Заявка успешно подана");
             window.location.assign('/')
