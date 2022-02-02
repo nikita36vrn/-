@@ -2,18 +2,9 @@ html, body, #app, .mainWrapper {
     height: 100%;
 }
 
-
-
 .mainWrapper {
     display: flex;
     flex-direction: column;
-}
-
-.green_border {
-    border-color: #228B22;
-}
-.blue_border {
-    border-color: #1270B7;
 }
 
 .red_cat{
@@ -63,6 +54,4 @@ main {
 .carousel-slider {
     border-radius: 4px;
 }
-input:invalid:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
-}
+

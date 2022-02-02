@@ -7,7 +7,6 @@ export default class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="ui container ">
-
                 </div>
             </footer>
         )
