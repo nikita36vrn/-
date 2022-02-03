@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.praktika.kotouslugi.exception.ServiceException;
+import ru.praktika.kotouslugi.model.Catalog;
 import ru.praktika.kotouslugi.model.Category;
 import ru.praktika.kotouslugi.model.KotoServiceEntity;
 import ru.praktika.kotouslugi.model.response.BaseResponse;
 import ru.praktika.kotouslugi.request.RequestId;
+import ru.praktika.kotouslugi.service.KotoLog;
 import ru.praktika.kotouslugi.service.KotoService;
 
 import io.swagger.annotations.Api;
@@ -28,6 +30,8 @@ public class ProductServiceController extends BaseController {
 
     @Autowired
     private KotoService kotoService;
+    @Autowired
+    private KotoLog kotoLog;
 
     @RequestMapping(value = "hello", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
@@ -102,4 +106,19 @@ public class ProductServiceController extends BaseController {
     public BaseResponse<List<Category>> listCategories() {
         return wrapper((s) -> kotoService.listCategories());
     }
+
+    @ResponseBody
+    @ApiOperation(value = "Список категорий",
+            notes = "Получение данных о сервисах",
+            response = BaseResponse.class,
+            tags = {"Котоуслуги"})
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = BaseResponse.class),
+            @ApiResponse(code = 401, message = "Не авторизованный пользователь"),
+            @ApiResponse(code = 500, message = "Внутренняя ошибка") })
+    @RequestMapping(value = "listCats", method = RequestMethod.POST, produces = "application/json")
+    public BaseResponse<List<Catalog>> listCats() {
+        return wrapper((s) -> kotoLog.listServices());
+    }
+
 }

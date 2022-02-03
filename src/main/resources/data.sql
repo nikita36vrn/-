@@ -35,6 +35,10 @@ INSERT INTO service
 values (8,
         'Не можете отнести своего котика в ветеринарную клинику? Вызовите ветеринара на дом',
         'Запись на вызов ветеринара');
+INSERT INTO service
+values (9,
+        'Зарегистрируйся на HOTCATS и будь счастлив',
+        'HotCats');
 
 
 -- category
@@ -46,6 +50,8 @@ INSERT INTO category
 values (2, 'Социальные услуги');
 INSERT INTO category
 values (3, 'Недвижимость');
+INSERT INTO category
+values (4, 'Знакомства');
 
 -- service_to_category
 INSERT INTO service_category
@@ -66,6 +72,8 @@ INSERT INTO service_category
 values (7, 1);
 INSERT INTO service_category
 values (8, 1);
+INSERT INTO service_category
+values (9, 4);
 
 CREATE TABLE otdels (
                     id_otdel INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -99,3 +107,12 @@ INSERT INTO cities_ot
 values (2,'Москва');
 INSERT INTO cities_ot
 values (3,'Санкт-Петербург');
+
+
+--catalog
+INSERT INTO catalog
+values(0,'Pretty doge', 'https://i.imgur.com/yhvwDRJ.jpeg','Doge','кот');
+INSERT INTO catalog
+values(1,'Sad Pepe', 'https://avatars.mds.yandex.net/get-images-cbir/1750085/3XKhFO38GVy3g7tk8YYOow1409/ocr','Pepe','кошкодевочка');
+INSERT INTO catalog
+values(2,'Hot_wiskas','https://images-ext-1.discordapp.net/external/q9djok_uuVt1OJVrWnvqU7Z74sMgukE2jf5e-VMpMQY/https/cdnn21.img.ria.ru/images/155338/96/1553389692_0%3A39%3A900%3A939_1920x0_80_0_0_1481d5ca80b69f182d402e26cd0ed39c.jpg?width=670&height=670','Kiska','кошкодевочка')

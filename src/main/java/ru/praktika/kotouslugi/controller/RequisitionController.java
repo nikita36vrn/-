@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import ru.praktika.kotouslugi.model.Requisition;
 import ru.praktika.kotouslugi.model.response.BaseResponse;
+import ru.praktika.kotouslugi.service.CatsService;
 import ru.praktika.kotouslugi.service.RequisitionService;
 
 import java.util.List;
@@ -25,6 +26,9 @@ public class RequisitionController extends BaseController {
 
     @Autowired
     private RequisitionService requisitionService;
+
+    @Autowired
+    private CatsService catsService;
 
     @RequestMapping(value = "listRequisition", method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
@@ -68,5 +72,21 @@ public class RequisitionController extends BaseController {
     public BaseResponse<Boolean> updateRequisition(@ApiParam(name = "request", value = "Тело запроса", required = true)
                                                    @RequestBody Map<String, Object> request) {
         return wrapper((s) -> requisitionService.updateRequisition(request));
+    }
+
+
+    @RequestMapping(value = "createCats", method = RequestMethod.POST, produces = "application/json")
+    @ResponseBody
+    @ApiOperation(value = "Обновить заявление",
+            notes = "Обновить заявление",
+            response = BaseResponse.class,
+            tags = {"Котоуслуги","Заявления"})
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK", response = BaseResponse.class),
+            @ApiResponse(code = 401, message = "Не авторизованный пользователь"),
+            @ApiResponse(code = 500, message = "Внутренняя ошибка") })
+    public BaseResponse<Integer> createCats(@ApiParam(name = "request", value = "Тело запроса", required = true)
+                                            @RequestBody Map<String, Object> request) {
+        return wrapper((s) -> catsService.createCats(request));
     }
 }

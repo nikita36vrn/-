@@ -3,6 +3,7 @@ package ru.praktika.kotouslugi.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.praktika.kotouslugi.dao.CategoryRepository;
+import ru.praktika.kotouslugi.dao.KotoLogRepository;
 import ru.praktika.kotouslugi.dao.KotoServiceRepository;
 
 import ru.praktika.kotouslugi.model.Category;
