@@ -42,13 +42,13 @@ public class CatDocsController extends BaseController {
             @ApiResponse(code = 200, message = "OK", response = BaseResponse.class),
             @ApiResponse(code = 401, message = "Не авторизованный пользователь"),
             @ApiResponse(code = 500, message = "Внутренняя ошибка") })
-    public BaseResponse<List<CatDocs>> getAllDocs(@RequestParam(name = "id", required = false)Optional<Integer> id)
+    public BaseResponse<List<CatDocs>> getAllDocs(@RequestParam Optional<Object> id)
     {
         if (!id.isPresent()) {
             return wrapper((s) -> catDocsService.getCatDocsList());         //to fix
         }
         else {
-            return wrapper((s)->catDocsService.getDoc(id.get()));
+            return wrapper((s)->catDocsService.getDoc(Integer.parseInt(id.get().toString())));
         }
     }
 

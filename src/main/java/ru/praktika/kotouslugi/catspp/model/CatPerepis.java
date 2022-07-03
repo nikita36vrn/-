@@ -1,12 +1,18 @@
 package ru.praktika.kotouslugi.catspp.model;
 
+
+import org.hibernate.validator.constraints.Length;
+import org.springframework.data.jpa.repository.Query;
 import ru.praktika.kotouslugi.catspp.enums.FamilyStatus;
 import ru.praktika.kotouslugi.catspp.enums.Gender;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+
+@Entity
+@Table(name="CatPerepis", uniqueConstraints = @UniqueConstraint(columnNames = {"PASSPORT_SERIES", "PASSPORT_NUMBER"}))
 public class CatPerepis {
     @Id
     @GeneratedValue
@@ -17,6 +23,13 @@ public class CatPerepis {
     private String breed;
     private LocalDate birthday;
     private int kidsCount;
+
+    @NotNull
+    @Length(min = 4, max = 4)
+    private String Passport_series;
+    @NotNull
+    @Length(min = 6, max = 6)
+    private String Passport_number;
 
     private FamilyStatus familyStatus;
 
@@ -98,5 +111,21 @@ public class CatPerepis {
 
     public void setFamilyStatus(String familyStatus) {
         this.familyStatus = FamilyStatus.getFSByString(familyStatus);
+    }
+
+    public String getPassport_series() {
+        return Passport_series;
+    }
+
+    public void setPassport_series(String passport_series) {
+        Passport_series = passport_series;
+    }
+
+    public String getPassport_number() {
+        return Passport_number;
+    }
+
+    public void setPassport_number(String passport_number) {
+        Passport_number = passport_number;
     }
 }

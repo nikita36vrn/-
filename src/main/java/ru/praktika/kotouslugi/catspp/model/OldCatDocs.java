@@ -4,6 +4,15 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 
+/*
+*
+*
+*                   А оно вообще надо?
+*
+*
+*
+ */
+
 @Entity
 @Table(name="OldCatDocs", uniqueConstraints = @UniqueConstraint(columnNames = {"PASSPORT_SERIES", "PASSPORT_NUMBER"}))
 public class OldCatDocs

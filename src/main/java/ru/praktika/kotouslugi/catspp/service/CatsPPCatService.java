@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.praktika.kotouslugi.catspp.controller.CatsPPCatController;
 import ru.praktika.kotouslugi.catspp.dao.CatsPPCatRepository;
 import ru.praktika.kotouslugi.catspp.model.CatsPPCat;
+import ru.praktika.kotouslugi.catspp.util.formatter;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -20,14 +21,13 @@ import java.util.Optional;
 @Service
 public class CatsPPCatService {
 
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
     @Autowired
     private CatsPPCatRepository catsPPCatRepository;
 
     public int createCat(Map<String, Object> request) {
         CatsPPCat catsPPCat = new CatsPPCat();
-        request.forEach((p, v)->{           //parameter, value
-            switch (p){
+        request.forEach((k, v)->{           //key, value
+            switch (k){
                 case "name":
                     catsPPCat.setName(v.toString());
                     break;
@@ -38,7 +38,7 @@ public class CatsPPCatService {
                     catsPPCat.setBreed(v.toString());
                     break;
                 case "birthday":
-                    catsPPCat.setBirthday(LocalDate.parse(v.toString(), formatter));
+                    catsPPCat.setBirthday(LocalDate.parse(v.toString(), formatter.getFormatter()));
                     break;
                 case "kidsCount":
                     catsPPCat.setKidsCount(Integer.parseInt(v.toString()));
@@ -86,8 +86,8 @@ public class CatsPPCatService {
         if (cat.isPresent())
         {
             CatsPPCat catsPPCat = cat.get();
-            request.forEach((p, v)->{           //parameter, value
-                switch (p){
+            request.forEach((k, v)->{           //parameter, value
+                switch (k){
                     case "name":
                         catsPPCat.setName(v.toString());
                         break;
@@ -98,7 +98,7 @@ public class CatsPPCatService {
                         catsPPCat.setBreed(v.toString());
                         break;
                     case "birthday":
-                        catsPPCat.setBirthday(LocalDate.parse(v.toString(), formatter));
+                        catsPPCat.setBirthday(LocalDate.parse(v.toString(), formatter.getFormatter()));
                         break;
                     case "kidsCount":
                         catsPPCat.setKidsCount(Integer.parseInt(v.toString()));

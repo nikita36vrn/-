@@ -96,7 +96,6 @@ public class CatDocsService {
         if (docs.isPresent())
         {
             lDocs.add(docs.get());
-            return lDocs;
         }
         return lDocs;
     }

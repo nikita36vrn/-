@@ -1,12 +1,12 @@
 package ru.praktika.kotouslugi.catspp.model;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.hibernate.annotations.ColumnDefault;
 import ru.praktika.kotouslugi.catspp.enums.FamilyStatus;
 import ru.praktika.kotouslugi.catspp.enums.Gender;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -20,11 +20,17 @@ public class CatsPPCat implements Serializable
     @Id
     @GeneratedValue
     private int id;
+    @NotNull
     private String registration;
+    @NotNull
     private String name;
+    @NotNull
     private Gender gender;
+    @NotNull
     private String breed;
+    @NotNull
     private LocalDate birthday;
+    @ColumnDefault("0")
     private int kidsCount;
 
     private FamilyStatus familyStatus;
